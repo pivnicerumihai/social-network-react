@@ -38,7 +38,7 @@ export const updateUser = (id) => {
 export const postLogin = (loginCredentials) =>{
    return async (dispatch)=>{ 
     dispatch(postLoginRequest);   
-    const res = await axios.post("http://localhost:3001/signin",loginCredentials);
+    const res = await axios.post("http://localhost:3001/user/signIn",loginCredentials);
     
    try{
     if(res.data==="Email or password are incorrect!"){
