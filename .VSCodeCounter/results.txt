@@ -1,0 +1,90 @@
+Date : 2020-05-18 20:03:58
+Directory : c:\Users\mcpiv\Learning\React\social-network\src
+Total : 46 files,  1909 codes, 46 comments, 294 blanks, all 2249 lines
+
+Languages
++------------------+------------+------------+------------+------------+------------+
+| language         | files      | code       | comment    | blank      | total      |
++------------------+------------+------------+------------+------------+------------+
+| JavaScript       |         29 |        823 |         38 |        113 |        974 |
+| JavaScript React |         16 |        604 |          0 |        138 |        742 |
+| SCSS             |          1 |        482 |          8 |         43 |        533 |
++------------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                 | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                    |         46 |      1,909 |         46 |        294 |      2,249 |
+| components                                                                                                           |         13 |        501 |          0 |        116 |        617 |
+| components\FriendsBar                                                                                                |          2 |         33 |          0 |         10 |         43 |
+| components\FriendsBar\FriendDiv                                                                                      |          1 |         15 |          0 |          5 |         20 |
+| components\Navbar                                                                                                    |          4 |         84 |          0 |         23 |        107 |
+| components\Navbar\FriendRequestsDropdown                                                                             |          1 |         25 |          0 |          7 |         32 |
+| components\Navbar\SearchBar                                                                                          |          2 |         29 |          0 |          8 |         37 |
+| components\Navbar\SearchBar\PeopleDropdown                                                                           |          1 |         10 |          0 |          4 |         14 |
+| components\NewPost                                                                                                   |          2 |         94 |          0 |         19 |        113 |
+| components\NewPost\FriendsList                                                                                       |          1 |         12 |          0 |          4 |         16 |
+| components\PostsContainer                                                                                            |          2 |         69 |          0 |         21 |         90 |
+| components\PostsContainer\Post                                                                                       |          1 |         36 |          0 |          7 |         43 |
+| components\ProfileBar                                                                                                |          1 |         96 |          0 |         15 |        111 |
+| components\RegistrationForm                                                                                          |          1 |         97 |          0 |         21 |        118 |
+| components\SignInForm                                                                                                |          1 |         28 |          0 |          7 |         35 |
+| pages                                                                                                                |          3 |        103 |          0 |         22 |        125 |
+| redux                                                                                                                |         24 |        671 |          0 |         85 |        756 |
+| redux\actions                                                                                                        |         11 |        318 |          0 |         51 |        369 |
+| redux\reducers                                                                                                       |         11 |        308 |          0 |         26 |        334 |
++----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| filename                                                                                                             | language         | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
+| c:\Users\mcpiv\Learning\React\social-network\src\App.js                                                              | JavaScript       |         28 |          0 |          7 |         35 |
+| c:\Users\mcpiv\Learning\React\social-network\src\App.test.js                                                         | JavaScript       |          8 |          0 |          2 |         10 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\FriendsBar\FriendDiv\FriendDiv.jsx                       | JavaScript React |         15 |          0 |          5 |         20 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\FriendsBar\FriendsBar.jsx                                | JavaScript React |         18 |          0 |          5 |         23 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\FriendRequestsDropdown\FriendRequestsDropdown.jsx | JavaScript React |         25 |          0 |          7 |         32 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\Navbar.jsx                                        | JavaScript React |         30 |          0 |          8 |         38 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\SearchBar\PeopleDropdown\PeopleDropdown.jsx       | JavaScript React |         10 |          0 |          4 |         14 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\SearchBar\SearchBar.jsx                           | JavaScript React |         19 |          0 |          4 |         23 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\NewPost\FriendsList\FriendsList.jsx                      | JavaScript React |         12 |          0 |          4 |         16 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\NewPost\NewPost.jsx                                      | JavaScript React |         82 |          0 |         15 |         97 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\PostsContainer\Post\Post.jsx                             | JavaScript React |         36 |          0 |          7 |         43 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\PostsContainer\PostsContainer.jsx                        | JavaScript React |         33 |          0 |         14 |         47 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\ProfileBar\ProfileBar.jsx                                | JavaScript React |         96 |          0 |         15 |        111 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\RegistrationForm\RegistrationForm.jsx                    | JavaScript React |         97 |          0 |         21 |        118 |
+| c:\Users\mcpiv\Learning\React\social-network\src\components\SignInForm\SignInForm.jsx                                | JavaScript React |         28 |          0 |          7 |         35 |
+| c:\Users\mcpiv\Learning\React\social-network\src\index.js                                                            | JavaScript       |         17 |          3 |          5 |         25 |
+| c:\Users\mcpiv\Learning\React\social-network\src\index.scss                                                          | SCSS             |        482 |          8 |         43 |        533 |
+| c:\Users\mcpiv\Learning\React\social-network\src\pages\FriendPage.jsx                                                | JavaScript React |         46 |          0 |          9 |         55 |
+| c:\Users\mcpiv\Learning\React\social-network\src\pages\ProfilePage.jsx                                               | JavaScript React |         37 |          0 |          7 |         44 |
+| c:\Users\mcpiv\Learning\React\social-network\src\pages\SignUpSignIn.jsx                                              | JavaScript React |         20 |          0 |          6 |         26 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\acceptFriend.action.js                                | JavaScript       |         32 |          0 |          5 |         37 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\declineFriend.action.js                               | JavaScript       |         31 |          0 |          4 |         35 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\deletePost.action.js                                  | JavaScript       |         29 |          0 |          4 |         33 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\friendsList.action.js                                 | JavaScript       |         11 |          0 |          2 |         13 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\getFriendDetails.action.js                            | JavaScript       |         31 |          0 |          4 |         35 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\getFriendList.action.js                               | JavaScript       |         37 |          0 |          8 |         45 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\getPosts.action.js                                    | JavaScript       |         31 |          0 |          9 |         40 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\hasAccount.action.js                                  | JavaScript       |          5 |          0 |          0 |          5 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\login.action.js                                       | JavaScript       |         45 |          0 |          5 |         50 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\post.action.js                                        | JavaScript       |         32 |          0 |          5 |         37 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\searchPeople.action.js                                | JavaScript       |         34 |          0 |          5 |         39 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\acceptFriend.js                                      | JavaScript       |         29 |          0 |          3 |         32 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\declineFriend.js                                     | JavaScript       |         29 |          0 |          3 |         32 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\deletePost.js                                        | JavaScript       |         30 |          0 |          3 |         33 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\friendsList.js                                       | JavaScript       |         17 |          0 |          2 |         19 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\getFriendDetails.js                                  | JavaScript       |         31 |          0 |          3 |         34 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\getFriendList.js                                     | JavaScript       |         39 |          0 |          4 |         43 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\getPosts.js                                          | JavaScript       |         28 |          0 |          1 |         29 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\hasAccount.js                                        | JavaScript       |          9 |          0 |          3 |         12 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\login.js                                             | JavaScript       |         38 |          0 |          1 |         39 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\post.js                                              | JavaScript       |         29 |          0 |          1 |         30 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\searchPeople.js                                      | JavaScript       |         29 |          0 |          2 |         31 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\rootReducer.js                                                | JavaScript       |         33 |          0 |          4 |         37 |
+| c:\Users\mcpiv\Learning\React\social-network\src\redux\store.js                                                      | JavaScript       |         12 |          0 |          4 |         16 |
+| c:\Users\mcpiv\Learning\React\social-network\src\serviceWorker.js                                                    | JavaScript       |         98 |         31 |         13 |        142 |
+| c:\Users\mcpiv\Learning\React\social-network\src\setupTests.js                                                       | JavaScript       |          1 |          4 |          1 |          6 |
+| Total                                                                                                                |                  |      1,909 |         46 |        294 |      2,249 |
++----------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+
