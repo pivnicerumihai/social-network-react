@@ -24,7 +24,7 @@ export const deletePost = (postId, userId) => {
     return async (dispatch) => {
         dispatch(deletePostRequest);
         try {
-            const res = await axios.get(`http://localhost:3001/deletePost?postId=${postId}&userId=${userId}`);
+            const res = await axios.get(`http://localhost:3001/posts/deletePost?postId=${postId}&userId=${userId}`);
             dispatch(deletePostSuccess(res.data));
             return res;
         } catch (err) {

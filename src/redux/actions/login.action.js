@@ -29,7 +29,7 @@ export const logout = () =>{
 export const updateUser = (id) => {
     return async(dispatch)=>{
         dispatch(postLoginRequest);
-       const res =  await axios.get(`http://localhost:3001/updateUserDetails?userId=${id}`)
+       const res =  await axios.get(`http://localhost:3001/user/updateUserDetails?userId=${id}`)
       dispatch(postLoginSuccess(res.data))
        
         return res;
@@ -38,9 +38,9 @@ export const updateUser = (id) => {
 export const postLogin = (loginCredentials) =>{
    return async (dispatch)=>{ 
     dispatch(postLoginRequest);   
-    const res = await axios.post("http://localhost:3001/user/signIn",loginCredentials);
+    const res = await axios.post("http://localhost:3001/user/signIn",loginCredentials)
     
-   try{
+  .then((res)=>{
     if(res.data==="Email or password are incorrect!"){
             dispatch(postLoginFailure(res.data));
     }
@@ -48,9 +48,10 @@ export const postLogin = (loginCredentials) =>{
             dispatch(postLoginSuccess(res.data));
     }
     return res;
-   } 
-   catch(err){
+}
+  )
+   .catch((err)=>{
        dispatch(postLoginFailure(err))
-   }
+   })
    }
 }

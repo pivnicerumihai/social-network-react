@@ -6,14 +6,12 @@ function FriendDiv(props){
     const { name, img, id} = props;
 
     return(
-        <div className="friend-div">
-            <Link to={id}>            
+    
+            <Link className="friend-div" to={id}>            
             <img src={img} alt="profile picture not loaded"/>
-            <br/>
             <p>{name}</p>
             </Link>
 
-        </div>
     )
 }
 

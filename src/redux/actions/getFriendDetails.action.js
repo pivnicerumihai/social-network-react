@@ -24,7 +24,7 @@ export const getFriendDetails = (friendId) =>{
     return async (dispatch)=>{
         dispatch(getFriendDetailsRequest);
         try{
-            const res = await axios.get(`http://localhost:3001/friendDetails?friendId=${friendId}`)
+            const res = await axios.get(`http://localhost:3001/friend/friendDetails?friendId=${friendId}`)
             dispatch(getFriendDetailsSuccess(res.data));
         }
         catch(err){

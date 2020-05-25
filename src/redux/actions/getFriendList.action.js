@@ -32,10 +32,10 @@ export const getFriendList = (id,search) =>{
         dispatch(getFriendsListRequest);
 
         try {
-            const res = await axios.get(`http://localhost:3001/getFriendsList?id=${id}&searchString=${search.toLowerCase()}`);
+            const res = await axios.get(`http://localhost:3001/posts/getFriendsListToPost?id=${id}&searchString=${search.toLowerCase()}`);
             const friendsList = res.data;
-
             dispatch(getFriendsListSuccess(friendsList));
+            return res;
         }
         catch (err) {
             const errorMessage = err.message;

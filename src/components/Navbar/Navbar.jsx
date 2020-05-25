@@ -26,10 +26,16 @@ function Navbar() {
             <span className="icons">
                 <button onClick={()=>setDropdown(!dropdown)}><FontAwesomeIcon icon={faInbox} size="2x" />
                 {friend_requests ?  <p className="notifications">{friend_requests.length}</p> : null } </button>
-                {dropdown && friend_requests ? <div className= "friend_requests_list"><h4>Friend Requests</h4>
+                {dropdown && friend_requests.length > 0 ? <div className= "friend_requests_list"><h4>Friend Requests</h4>
                     {friend_requests.map((el,i)=>{return ( <FriendRequestsDropdown key={i} friend_id={el.id} profile_pic = {el.profile_pic} name={el.name} />)})}
-                </div> : null}
-            
+                </div> 
+                : dropdown && friend_requests.length === 0 ?
+                <div style={{borderBottomRightRadius:"15px",borderBottomLeftRadius:"15px"}}className= "friend_requests_list">
+                    <h4>Friend Requests</h4>
+                <p style={{textAlign:"center",color:"rgb(159, 159, 159)",marginTop:"25px"}}>You have no Friend Requests!</p>
+                </div>
+               :
+                null}
                 <Link to="/"><button> <FontAwesomeIcon icon={faUserCircle} size="2x" /></button></Link>
                 <button><FontAwesomeIcon icon={faSlidersH} size="2x" /></button>
                 <button onClick={() => {

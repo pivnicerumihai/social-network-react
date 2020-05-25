@@ -1,7 +1,7 @@
 import React from "react";
 
 const LoadingSpinner = ( ) =>(
-    <div className="loading-spinner"><img src={require("../../assets/images/loading.gif")} alt="not loaded" /></div>
+    <div className="loading-spinner"></div>
 )
 
 export default LoadingSpinner;

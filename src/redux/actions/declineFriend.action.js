@@ -22,7 +22,7 @@ export const declineFriend = (user_id,friend_id) => {
     return async dispatch =>{
         dispatch(declineFriendRequest)
         try{
-            const res = await axios.get(`http://localhost:3001/declineFriend?id=${user_id}&friend_id=${friend_id}`)
+            const res = await axios.get(`http://localhost:3001/friend/declineFriend?id=${user_id}&friend_id=${friend_id}`)
             dispatch(declineFriendSuccess());
             return res;
         }

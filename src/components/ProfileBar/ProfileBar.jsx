@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { post } from "../../redux/actions/post.action";
 import { updateUser } from "../../redux/actions/login.action";
+import { getFriendDetails } from "../../redux/actions/getFriendDetails.action";
+
 
 function ProfileBar(props) {
 
@@ -11,7 +13,6 @@ function ProfileBar(props) {
     const user_last_name = useSelector(state => state.login.userDetails.last_name);
     const user_profile_pic = useSelector(state => state.login.userDetails.profile_pic);
     const [selectedFile, setSelectedFile] = useState(null);
-    const [displayInput, setDisplayInput] = useState(false);
     const [sentFriendRequest, setSentFriendRequest] = useState(false);
     const [friendDropdown, setFriendDropdown] = useState(false);
     const [popup, setPopup] = useState(false);
@@ -22,18 +23,17 @@ function ProfileBar(props) {
 
     const fileUploadHandler = () => {
 
-        if (displayInput) {
+        const fd = new FormData();
+        fd.append("profilePicture", selectedFile);
+        fd.append("id", id)
+        dispatch(post(`http://localhost:3001/user/uploadNewProfilePic`, fd))
+            .then((res) => {
+                if (res.data === "Image Upload Success!") {
+                    (dispatch(updateUser(id)));
+                    setSelectedFile(null)
+                }
+            })
 
-            const fd = new FormData();
-            fd.append("profilePicture", selectedFile);
-            fd.append("id", id)
-            dispatch(post(`http://localhost:3001/uploadNewProfilePic`, fd))
-                .then(dispatch(updateUser(id)))
-            setDisplayInput(false);
-        }
-        else {
-            setDisplayInput(true);
-        }
     }
 
     const toggleFriendDropdown = () => {
@@ -44,7 +44,13 @@ function ProfileBar(props) {
         setPopup(!popup);
     }
     const removeFriend = (user_id, friend_id) => {
-        dispatch(post("http://localhost:3001/removeFriend", user_id, friend_id)).then(()=>setPopup(false));
+        dispatch(post("http://localhost:3001/friend/removeFriend", user_id, friend_id))
+            .then((res) => {
+                if (res.data === "Successfully Deleted!") {
+                    dispatch(updateUser(id));
+                    setPopup(false)
+                }
+            })
     }
 
     const addFriend = (friend_id) => {
@@ -53,7 +59,12 @@ function ProfileBar(props) {
             name: user_first_name + " " + user_last_name,
             profile_pic: user_profile_pic
         }
-        dispatch(post("http://localhost:3001/addFriend", { User, friend_id }));
+        dispatch(post("http://localhost:3001/friend/addFriend", { User, friend_id }))
+            .then((res) => {
+                if (res.data === "Success!") {
+                    dispatch(getFriendDetails(friend_id))
+                }
+            });
     }
 
     let friendship;
@@ -68,7 +79,7 @@ function ProfileBar(props) {
             popupText = <div className="pop-up">
                 <div className="pop-up-text"><p>Are you sure you want to remove {name} from your friends?</p>
                     <br />
-                    <button onClick={()=>removeFriend({ id, friend_id })}>Yes</button><button onClick={() => { setPopup(false); setFriendDropdown(false) }}>No</button>
+                    <button onClick={() => removeFriend({ id, friend_id })}>Yes</button><button onClick={() => { setPopup(false); setFriendDropdown(false) }}>No</button>
                 </div>
             </div>
         }
@@ -89,8 +100,9 @@ function ProfileBar(props) {
                 <img className="profile_pic" src={profile_pic} alt="Not loaded" />
                 <br />
                 {friend_id ? friendship : <div className="profile_pic_upload">
-                    <label htmlFor="upload-photo" onClick={fileUploadHandler}>Upload profile picture</label>
+                    <label htmlFor="upload-photo">Select profile picture</label>
                     <input id="upload-photo" type="file" onChange={e => { setSelectedFile(e.target.files[0]) }} />
+                    {selectedFile ? <input class="save-picture" type="button" onClick={fileUploadHandler} value="Update Profile Picture"></input> : null}
                 </div>
                 }
 

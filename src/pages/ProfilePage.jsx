@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../redux/actions/login.action";
-import { getFriendList } from "../redux/actions/getFriendList.action"
-
 
 import ProfileBar from "../components/ProfileBar/ProfileBar";
 import NewPost from "../components/NewPost/NewPost";

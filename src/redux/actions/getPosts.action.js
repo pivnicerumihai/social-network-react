@@ -25,7 +25,7 @@ export const getPosts = (id, user_to) => {
           dispatch(getPostsRequest);
         try {
 
-            const res = await axios.get(`http://localhost:3001/getPosts?id=${id}&user_to=${user_to}`)
+            const res = await axios.get(`http://localhost:3001/posts/getPosts?id=${id}&user_to=${user_to}`)
             const posts = res.data;
             dispatch(getPostsSuccess(posts));
             return res;

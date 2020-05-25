@@ -4,20 +4,32 @@ import ProfileBar from "../components/ProfileBar/ProfileBar";
 import NewPost from "../components/NewPost/NewPost";
 import PostsContainer from "../components/PostsContainer/PostsContainer"
 import FriendsBar from "../components/FriendsBar/FriendsBar"
-import { getFriendList } from "../redux/actions/getFriendList.action";
+import { getAllFriends } from "../redux/actions/getAllFriends.action";
 import { useSelector, useDispatch } from "react-redux";
 import { getFriendDetails } from "../redux/actions/getFriendDetails.action";
+import { Redirect } from "react-router-dom";
 
 function FriendPage({ match: { params: { friend_id } } }) {
+
+
+
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getFriendDetails(friend_id))
-        dispatch(getFriendList(friend_id, ''))
-    }, [dispatch,friend_id])
+        dispatch(getAllFriends(friend_id))
+    }, [dispatch, friend_id])
 
     const friend_details = useSelector(state => state.getFriendDetails)
     const userDetails = useSelector(state => state.login.userDetails);
+
+
+// Redirect to home page, if user clicks on his profile
+    if (friend_id === userDetails._id) {
+        return (
+            <Redirect to="/"></Redirect>
+        )
+    }
 
     const { loading, success } = friend_details;
 
@@ -38,7 +50,7 @@ function FriendPage({ match: { params: { friend_id } } }) {
                         likes={num_likes}
                         posts={num_posts}
                         profile_pic={profile_pic} />
-                    <NewPost friend_id={friend_id} posted_to={friend_details.friendDetails.name} added_by={first_name + " " + last_name} />
+                    <NewPost friend_id={friend_id} profile_pic={profile_pic} posted_to={friend_details.friendDetails.name} added_by={first_name + " " + last_name} />
                 </div>
                 <br />
                 <div className="bottom-container">

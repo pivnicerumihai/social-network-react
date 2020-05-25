@@ -24,7 +24,7 @@ export const searchPeople = (searchString) => {
     return async dispatch =>{
         dispatch(searchPeopleRequest);
         try{
-            const res = await axios.get(`http://localhost:3001/searchPeople?searchString=${searchString.toLowerCase()}`);
+            const res = await axios.get(`http://localhost:3001/user/searchPeople?searchString=${searchString.toLowerCase()}`);
             console.log("DATA-RESPONSE:",res.data)
             dispatch(searchPeopleSuccess(res.data));
             return res;

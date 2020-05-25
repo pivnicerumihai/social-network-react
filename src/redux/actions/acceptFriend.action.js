@@ -24,7 +24,7 @@ export const acceptFriend = (user_id, friend_id) => {
     return async dispatch =>{
         dispatch(acceptFriendRequest)
         try{
-            const res = await axios.get(`http://localhost:3001/acceptFriend?id=${user_id}&friend_id=${friend_id}`)
+            const res = await axios.get(`http://localhost:3001/friend/acceptFriend?id=${user_id}&friend_id=${friend_id}`)
             dispatch(acceptFriendSuccess());
             return res;
         }
