@@ -28,6 +28,7 @@ export const getAllFriends = (id) => {
             const res = await axios.get(`http://localhost:3001/user/getAllFriends?id=${id}`);
             const friendsList = res.data;
             dispatch( getAllFriendsSuccess(friendsList));
+            return res;
         } catch (err) {
             const errorMessage = err.message;
             dispatch( getAllFriendsFailure(errorMessage));

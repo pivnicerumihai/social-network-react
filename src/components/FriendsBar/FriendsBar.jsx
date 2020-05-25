@@ -22,7 +22,7 @@ function FriendsBar(props) {
             <h3>Friends</h3>
             {name !== undefined && loading === false ? name.map((el, i) => {
                 return (<FriendDiv key={i} id={user_id[i]} name={el} img={profile_pic[i]} />)
-            }) : loading === false && name === undefined ? <LoadingSpinner/> : 
+            }) : loading === false && name === undefined ? <LoadingSpinner color={"white"}/> : 
             <p style={{backgroundColor:"white",width:"320px", padding:"15px",textAlign:"center"}}>
                 You have no friends! <br/> You can add friends by searching for people in the search bar and then sending a friend request!
             </p>}

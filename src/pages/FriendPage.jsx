@@ -4,6 +4,7 @@ import ProfileBar from "../components/ProfileBar/ProfileBar";
 import NewPost from "../components/NewPost/NewPost";
 import PostsContainer from "../components/PostsContainer/PostsContainer"
 import FriendsBar from "../components/FriendsBar/FriendsBar"
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner"
 import { getAllFriends } from "../redux/actions/getAllFriends.action";
 import { useSelector, useDispatch } from "react-redux";
 import { getFriendDetails } from "../redux/actions/getFriendDetails.action";
@@ -27,6 +28,7 @@ function FriendPage({ match: { params: { friend_id } } }) {
 // Redirect to home page, if user clicks on his profile
     if (friend_id === userDetails._id) {
         return (
+
             <Redirect to="/"></Redirect>
         )
     }
@@ -34,9 +36,11 @@ function FriendPage({ match: { params: { friend_id } } }) {
     const { loading, success } = friend_details;
 
     if (!loading && success === false) {
-        return (
-            <div><img src={require("../assets/images/loading.gif")} alt="not loaded" /></div>
-        )
+       return(
+        <div className="home">
+       <LoadingSpinner color={"#643434"}/>
+       </div>
+       )
     }
     else if (success === true && loading === false) {
         const { name, num_likes, num_posts, profile_pic, id } = friend_details.friendDetails;

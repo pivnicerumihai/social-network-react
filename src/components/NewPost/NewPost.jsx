@@ -4,7 +4,7 @@ import { union } from "lodash";
 import FriendsList from "./FriendsList/FriendsList";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getFriendList, toggleList } from "../../redux/actions/getFriendList.action";
+import { getFriendList, toggleList, closeList } from "../../redux/actions/getFriendList.action";
 import { post } from "../../redux/actions/post.action";
 import { getPosts } from "../../redux/actions/getPosts.action";
 
@@ -19,8 +19,9 @@ function NewPost(props) {
     const friend_name = useSelector(state => state.getFriendDetails.friendDetails.name)
     const user_to = props.user_to;
     const { user_id, user_profile_pic } = useSelector(state => ({
-        user_id:state.login.userDetails._id,
-        user_profile_pic:state.login.userDetails.profile_pic}))
+        user_id: state.login.userDetails._id,
+        user_profile_pic: state.login.userDetails.profile_pic
+    }))
 
     const dispatch = useDispatch();
 
@@ -36,7 +37,7 @@ function NewPost(props) {
                 added_by_pic: user_profile_pic,
                 user_to_id: props.friend_id,
                 user_to: props.posted_to,
-                user_to_pic : props.profile_pic,
+                user_to_pic: props.profile_pic,
                 user_closed: false,
                 deleted: false,
                 likes: 0
@@ -44,9 +45,13 @@ function NewPost(props) {
             dispatch(post("http://localhost:3001/posts/createNewPost", newPost))
                 .then(res => {
                     if (res.data === "Post saved") {
-                        dispatch(getPosts(user_id, friend_name))
+                        dispatch(getPosts(props.friend_id))
                     }
                     setPostBody("");
+                    setFriendImg([]);
+                    setPostedTo([]);
+                    setPostedToId([]);
+                    dispatch(closeList())
                 }
                 )
         }
@@ -59,17 +64,21 @@ function NewPost(props) {
                 user_to: postedTo,
                 user_closed: false,
                 user_to_id: PostedToId,
-                user_to_pic : friendImg,
+                user_to_pic: friendImg,
                 deleted: false,
                 likes: 0
             }
             dispatch(post("http://localhost:3001/posts/createNewPost", newPost))
                 .then(res => {
                     if (res.data === "Post saved") {
-                        dispatch(getPosts(user_id, user_to))
+                        dispatch(getPosts(user_id))
                     }
                 })
             setPostBody("");
+            setFriendImg([]);
+            setPostedTo([]);
+            setPostedToId([]);
+            dispatch(closeList())
         }
     }
 
@@ -108,14 +117,26 @@ function NewPost(props) {
                                 : null}
                             {friendList.showComponent && friendList.friendsList.name !== undefined ? friendList.friendsList.name.map((el, i) => {
                                 return <div key={i} >
-                                    <FriendsList click={() => 
-                                    { setPostedTo(union([...postedTo, el]));
+                                    <FriendsList click={() => {
                                         let profile_pic = friendList.friendsList.profile_pic[i];
                                         let posted_to_id = friendList.friendsList.user_id[i];
-                                    setFriendImg(union([...friendImg, profile_pic ])) 
-                                    setPostedToId(union([...PostedToId,posted_to_id]))
-                                }}
-                                        profile_pic={ friendList.friendsList.profile_pic[i]} name={el} />
+                                        if (!postedTo.includes(el)) {
+                                            {
+                                                setPostedTo(union([...postedTo, el]));
+                                                setFriendImg(union([...friendImg, profile_pic]))
+                                                setPostedToId(union([...PostedToId, posted_to_id]))
+                                            }
+                                        }
+                                        else {
+
+                                            setPostedTo(union(postedTo.filter(arr => arr !== el)));
+                                            setFriendImg(union(friendImg.filter(arr => arr !== profile_pic)))
+                                            setPostedToId(union(friendImg.filter(arr => arr !== posted_to_id)))
+
+
+                                        }
+                                    }}
+                                        profile_pic={friendList.friendsList.profile_pic[i]} name={el} />
                                 </div>
                             })
                                 :

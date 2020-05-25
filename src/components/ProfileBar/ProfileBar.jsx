@@ -86,10 +86,11 @@ function ProfileBar(props) {
         else {
 
             if (friend_requests.some(e => e.id === id) || sentFriendRequest === true) {
-                friendship = <button className="add-friend-button">Friend Request Sent</button>
+                friendship = <button className="add-friend-button">Friendship Requested</button>
             }
             else {
-                friendship = <button className="add-friend-button" onClick={() => addFriend(friend_id)}>Send Friend Request</button>
+                friendship = <button className="add-friend-button" onClick={() =>{
+                     addFriend(friend_id)}}>Send Friend Request</button>
             }
 
         }

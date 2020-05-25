@@ -1,92 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
 
+
+
 * {
     margin: 0 auto;
 }
-
+$primary-color : #643434;
+$secondary-color : #e5e5e5;
 // Loading Spinner ////////////
 .loading-spinner {
-  color: #ffffff;
-  font-size: 90px;
-  text-indent: -9999em;
-  overflow: hidden;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  margin: 72px auto;
-  position: relative;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load6 2.2s infinite ease, round 2.2s infinite ease;
-  animation: load6 2.2s infinite ease, round 2.2s infinite ease;
-}
-@-webkit-keyframes load6 {
-  0% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 72px auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 2.2s infinite ease, round 2.2s infinite ease;
+    animation: load6 2.2s infinite ease, round 2.2s infinite ease;
+    z-index:10;
   }
-  5%,
-  95% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  @-webkit-keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
   }
-  10%,
-  59% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  @keyframes load6 {
+    0% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    5%,
+    95% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+    10%,
+    59% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+    20% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+    38% {
+      box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+    100% {
+      box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
   }
-  20% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  @-webkit-keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
-  38% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  @keyframes round {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-}
-@keyframes load6 {
-  0% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-  5%,
-  95% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-  10%,
-  59% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-  }
-  20% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-  }
-  38% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-  }
-  100% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-}
-@-webkit-keyframes round {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes round {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
+  
 
 .first_page {
     height: 100vh;
@@ -108,7 +111,7 @@
 
             width: 100%;
             height: 90px;
-            background-color: #643434;
+            background-color: $primary-color;
             border-top-left-radius: 7px;
             border-top-right-radius: 7px;
 
@@ -128,9 +131,9 @@
         //Register Form
         .register_form {
             input[type="submit"] {
-                background-color: #643434;
+                background-color: $primary-color;
                 padding: 5px 10px 5px 10px;
-                border: 1px solid #643434;
+                border: 1px solid $primary-color;
                 border-radius: 3px;
                 margin: 5px 0 10px 0;
                 color: #160c0c;
@@ -158,7 +161,7 @@
             input[type="text"]:hover,
             [type="email"]:hover,
             [type="password"]:hover {
-                border-color: #643434;
+                border-color: $primary-color;
             }
         }
 
@@ -166,9 +169,9 @@
         .login_form {
 
             input[type="submit"] {
-                background-color: #643434;
+                background-color: $primary-color;
                 padding: 5px 10px 5px 10px;
-                border: 1px solid #643434;
+                border: 1px solid $primary-color;
                 border-radius: 3px;
                 margin: 5px 0 10px 0;
                 color: #160c0c;
@@ -194,18 +197,18 @@
 
             input[type="email"]:hover,
             [type="password"]:hover {
-                border-color: #643434;
+                border-color: $primary-color;
             }
         }
 
         button {
             text-decoration: none;
-            color: #643434;
+            color: $primary-color;
             background-color: #ffff;
             border: none;
             font-size: 14px;
             outline: none;
-            ;
+            
 
             &:hover {
 
@@ -218,45 +221,46 @@
 }
 
 .navbar {
-    background-color: #643434;
-    width: 90%;
+
+    background-color: $primary-color;
+    width: 100%;
     display: flex;
-    align-items: stretch;
 
     .logo {
         outline: none;
         border: none;
-        background-color: #643434;
-        color: white;
+        background-color: $primary-color;
+        color: $secondary-color;
         font-family: 'Chelsea Market', cursive;
         font-size: 55px;
         text-shadow: 4px 4px #291818;
 
         &:hover {
             color: #291818;
-            text-shadow: 4px 4px white;
+            text-shadow: 4px 4px $secondary-color;
             cursor: pointer;
         }
     }
 
     input[type="text"] {
+        text-align:center;
         height: 20px;
         align-self: center;
         outline: none;
-        width: 300px;
+        min-width: 300px;
     }
 
     .icons {
         width: 15%;
         display: flex;
-        color: white;
+        color:  $secondary-color;
 
         button {
             position: relative;
             padding-left: 22px;
             padding-right: 22px;
-            background-color: #643434;
-            color: white;
+            background-color: $primary-color;
+            color: $secondary-color;
             outline: none;
             border: none;
             height: 100%;
@@ -283,8 +287,8 @@
 
         .friend_requests_list {
             position: absolute;
-            background-color: white;
-            border: 0.5px solid #643434;
+            background-color: $secondary-color;
+            border: 0.5px solid $primary-color;
             top: 11%;
             right: 4.7%;
             border-top-left-radius: 14px;
@@ -295,8 +299,8 @@
                 text-align: center;
                 border-top-left-radius: 14px;
                 border-top-right-radius: 14px;
-                color: white;
-                background-color: #643434;
+                color: $secondary-color;
+                background-color: $primary-color;
                 font-size: 18px;
             }
 
@@ -328,7 +332,7 @@
                 p {
                     text-align: center;
                     flex: 1;
-                    color: #643434;
+                    color: $primary-color;
                     font-size: 16px;
                     align-self: center;
                     margin-top: 7px;
@@ -351,20 +355,20 @@
 
         .people-dropdown {
             position: absolute;
-            background-color: white;
+            background-color: $secondary-color;
             width: 100%;
-            border: 1px solid #643434;
+            border: 1px solid $primary-color;
 
             .people {
                 display: flex;
-                border-bottom: 1px solid #643434;
-                color: #643434;
+                border-bottom: 1px solid $primary-color;
+                color: $primary-color;
                 height: 40px;
 
                 &:hover {
                     cursor: pointer;
-                    background-color: #643434;
-                    color: white;
+                    background-color: $primary-color;
+                    color: $secondary-color;
                 }
 
                 img {
@@ -383,19 +387,20 @@
 }
 
 .home {
-    background-color: #f7f7f7;
-    height: 100vh;
+
+    background-color: white;
+    height: 100%;
 
     .profile_bar {
         padding-left: 5px;
-        background-color: white;
+        background-color: $secondary-color;
         margin-top: 10px;
         margin-left: 5%;
         float: left;
         min-width: 370px;
         max-width: 30vw;
         height: 20vh;
-        border: 1.5px solid #643434;
+        border: 1.5px solid $primary-color;
         border-radius: 7px;
         display: flex;
 
@@ -417,16 +422,16 @@
                 label {
                     padding: 2px 4px 2px 4px;
                     border-radius: 7px;
-                    border: 1px solid #643434;
+                    border: 1px solid $primary-color;
                     outline: none;
                     cursor: pointer;
                     margin-top: 5px;
-                    background-color: white;
-                    color: #643434;
+                    background-color: $secondary-color;
+                    color: $primary-color;
 
                     &:hover {
-                        background-color: #643434;
-                        color: white;
+                        background-color: $primary-color;
+                        color: $secondary-color;
                     }
                 }
 
@@ -446,29 +451,29 @@
 
             .add-friend-button {
                 outline: none;
-                border: 1px solid #643434;
-                background-color: white;
-                color: #643434;
+                border: 1px solid $primary-color;
+                background-color: $secondary-color;
+                color: $primary-color;
                 font-size: 14px;
 
                 &:hover {
                     cursor: pointer;
-                    background-color: #643434;
-                    color: white;
+                    background-color: $primary-color;
+                    color: $secondary-color;
                 }
             }
 
             .add-friend-button-2 {
                 outline: none;
-                border: 1px solid #643434;
-                background-color: white;
-                color: #643434;
+                border: 1px solid $primary-color;
+                background-color: $secondary-color;
+                color: $primary-color;
                 font-size: 14px;
 
                 &:hover {
                     cursor: pointer;
-                    background-color: #643434;
-                    color: white;
+                    background-color: $primary-color;
+                    color: $secondary-color;
                 }
             }
 
@@ -498,7 +503,7 @@
                 top: 50%;
                 left: 40%;
                 border: 1px solid black;
-                background-color: white;
+                background-color: $secondary-color;
             }
 
             p {
@@ -512,7 +517,7 @@
 
                 &:hover {
                     cursor: pointer;
-                    border: 1px solid #643434;
+                    border: 1px solid $primary-color;
                 }
             }
         }
@@ -537,7 +542,7 @@
         textarea {
             max-height: 22vh;
             padding: 5px 10px 5px 10px;
-            border: 1px solid #643434;
+            border: 1px solid $primary-color;
             border-radius: 7px;
             resize: none;
 
@@ -551,17 +556,17 @@
             height: 30px;
             margin-left: 10px;
             padding: 3px 5px 3px 5px;
-            border: 1px solid #643434;
-            background-color: white;
-            color: #643434;
+            border: 1px solid $primary-color;
+            background-color: $secondary-color;
+            color: $primary-color;
             font-size: 15px;
             border-radius: 7px;
             outline: none;
 
             &:hover {
                 cursor: pointer;
-                background-color: #643434;
-                color: white;
+                background-color: $primary-color;
+                color: $secondary-color;
             }
 
             &:active {
@@ -572,7 +577,7 @@
 
         .post_to_friend {
             position: absolute;
-            background-color: white;
+            background-color: $secondary-color;
             margin-top: 5px;
             display: flex;
             flex-direction: column;
@@ -580,12 +585,12 @@
             border-radius: 7px;
 
             input {
+                text-align: center;
                 border: none;
                 width: 250px;
                 padding: 5px 2px 5px 2px;
                 outline: none;
-                ;
-                border: 1px solid #643434;
+                border: 1px solid $primary-color;
 
                 border-radius: 7px;
                 border-bottom-left-radius: 0;
@@ -593,22 +598,23 @@
             }
 
             .friend_details {
-                border: 1px solid black;
+                border: 1px solid $primary-color;
                 border-top: none;
                 width: 250px;
+                padding: 5px 2px 5px 2px;
                 height: 50px;
                 display: flex;
-                color: #643434;
+                color: $primary-color;
 
                 &:hover {
-                    background-color: #643434;
+                    background-color: $primary-color;
                     cursor: pointer;
-                    color: white;
+                    color: $secondary-color;
                 }
 
                 img {
                     align-self: center;
-                    // height: 35px;;
+                   border-radius:15px;
                     width: 20%;
                     margin: 0 auto;
 
@@ -631,15 +637,28 @@
 
     .bottom-container {
         display: flex;
-
+       
+        .not-friends{
+            background-color:$secondary-color;
+            height:50vh;
+            text-align: center  ;
+            border:1px solid $primary-color;
+            width:50%;
+            color:$primary-color;
+            display:flex;
+            border-radius:50px;
+            h3{
+               align-self:center;
+            }
+              
+        }
         .posts_container {
             min-width: 60vw;
             height: 20vh;
             float: right;
             margin-right: 5%;
-
-
-            .post {
+        
+         .post {
                 margin-top:15px;
                 display:flex;
                 flex-direction: column;
@@ -647,7 +666,7 @@
                 span{
                     align-self: center;
                     margin-right: 15px;
-                    color:white;
+                    color:$secondary-color;
                     width:20px;
                     text-align: center;
                     &:hover{
@@ -658,15 +677,17 @@
                     }
                 }
                 .post-by{
-                    background-color: #643434;
+                    background-color: $primary-color;
                     display:flex;
                     width:100%;
                     border-top-right-radius: 15px;
-                    border-top-left-radius: 10px;
-                    
+                    border-top-left-radius: 55px;
+                    img{
+                        margin-left:15px;
+                    }
                     h4{
                         align-self: center;
-                        color:white;
+                        color:$secondary-color;
                     }
                 }
                 p{
@@ -680,21 +701,77 @@
                 .posted-to{
                     min-height:30px;
                     display:flex;
-                    background-color: #643434;
+                    padding-bottom:2px;
+                    background-color: $primary-color;
                     width:100%;
                     border-bottom-right-radius: 55px;
-                    border-bottom-left-radius: 10px;  
-                    
+                   
                 }
-           
+                .comments_btn{
+                    font-weight: bold;
+                    background-color: $primary-color;
+                    color:$secondary-color;
+                    border:1px solid $primary-color;
+                    margin-top:-2px;
+                    height:25px;
+                    border-bottom-right-radius: 20px;
+                    border-bottom-left-radius:5px;
+                    &:hover{
+                        background-color:#745252;
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                    &:active,&:focus{
+                        outline: none;
+                    }
+                }
+                .comments-container{
+
+                    margin-top:-2px;
+                    border: 1px solid $primary-color;
+                    width:95%;
+                    margin-left:2.5%;
+                    display:flex;
+                    flex-direction: column;
+                    .post_comment{
+                        margin-top:1em;
+                        margin-left:1em;
+                       width:95%;
+                       padding-bottom:1em;
+                        textarea{
+                        resize: none;
+                        width:100%;
+                        height:6em;
+                        
+                    }
+                    
+                    input[type="submit"]{
+                        text-decoration: none;
+                        color: $primary-color;
+                        background-color: $secondary-color;
+                        color:$primary-color;
+                        border: none;
+                        font-size: 14px;
+                        outline: none;
+                        border:1px solid $primary-color;
+                        border-radius:7px;
+                        &:hover{
+                            background-color: $primary-color;
+                            color:white;
+                            cursor:pointer;
+                        }
+                        
+                    }
+                }
+                }
                 img{
                     
-                    margin-left:0;
+                    margin-left:5px;
                     margin-right:0;
                     align-self:center;
                     border-radius:15px;
                     padding:3px 10px 3px 10px;
-                    max-height:30px;
+                    max-height:20px;
                     max-width:5%;
                     flex:0;
                 }
@@ -704,36 +781,72 @@
                     margin-right:10%;
                     margin-left:0;
                     white-space: nowrap;
-                        color:white;
+                        color:$secondary-color;
                     align-self: center;
                 width:10px;
 
                 }
              }
+             .more_posts_btn {
+                width:25%;
+                margin-left:37.5%;
+                margin-top:10px;   
+                background-color:$secondary-color;
+                color:$primary-color;
+                padding: 3px 5px 3px 5px;
+                font-size:15px;
+                border:1px solid $primary-color;
+                border-radius:7px;
+                &:hover{
+                    background-color: $primary-color;
+                    color:white;
+                    cursor:pointer;
+                }
+                &:active{
+                    padding:5px;
+                }
+                &:active, &:focus{
+                    outline:none;
+                }
+             }
+             .no_more_posts{
+                width:30%;
+                margin-left:35%;
+                margin-top:10px;   
+                background-color:white;
+                color:$primary-color;
+                padding: 3px 5px 3px 5px;
+                font-size:17px;
+                font-weight:600;
+                border-radius:7px;
+             }
         }
 
         .friends-bar {
 
-            border: 1px solid black;
-            min-width:15vw;
+            overflow-y:auto;
+            border: 1px solid $primary-color;
+            min-width:20%;
+            margin-left:5%;
             border-radius: 8px;
-            background-color: #643434;
+            background-color: $primary-color;
 
             h3 {
-                color: white;
+                color: $secondary-color;
                 text-align: center;
             }
 
             .friend-div {
-                background-color: white;
+                background-color: $secondary-color;
                 height: 60px;
                 display: flex;
-                border-bottom: 1px solid #bdbec5;
+                border-bottom: 1px solid $primary-color;
                 text-decoration: none;
-                color: #643434;
+                color: $primary-color;
 
                 &:hover {
-                    background-color: #e5e5e5;
+                    background-color:$primary-color;
+                    color:$secondary-color;
                     cursor: pointer;
                     font-weight: 800;
                  

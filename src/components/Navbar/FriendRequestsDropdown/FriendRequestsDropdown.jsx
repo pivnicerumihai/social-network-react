@@ -2,6 +2,7 @@ import React from "react";
 import { acceptFriend } from "../../../redux/actions/acceptFriend.action";
 import { declineFriend } from "../../../redux/actions/declineFriend.action";
 import { updateUser } from "../../../redux/actions/login.action"
+import {getAllFriends} from "../../../redux/actions/getAllFriends.action";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -17,7 +18,7 @@ function FriendsRequestsDropdown(props) {
             .then((res) => {
                 if (res.data === "Success!") {
                     dispatch(updateUser(user_id));
-
+                    dispatch(getAllFriends(user_id))
                 }
             });
     }

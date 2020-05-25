@@ -37,6 +37,12 @@ const INITIAL_STATE = {
                  showComponent:!state.showComponent,
                  showInputText:!state.showInputText
              }
+             case "CLOSE_LIST":
+                return{
+                    ...state,
+                    showComponent:false,
+                    showInputText:false
+                }
         default:return state;
      }
  }

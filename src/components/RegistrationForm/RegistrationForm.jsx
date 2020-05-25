@@ -17,7 +17,19 @@ const RegistrationForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setError([]);
-        if (email !== email2) {
+        if(firstName.trim().length <= 1){
+            setError(errors=>[...errors,"First Name must be at least 2 characters long"])
+        }
+        else if (/\d/.test(firstName)){
+            setError(errors=>[...errors,"First Name must contain letters only"])
+        }
+        else if (lastName.trim().length <= 1){
+            setError(errors=>[...errors,"Last Name must be at least 2 characters long"])
+        }
+        else if(/\d/.test(lastName)){
+            setError(errors=>[...errors,"Last Name must contain letters only"])
+        }
+        else if (email !== email2) {
             setError(errors => [...errors, "Emails do not match!"]);
         }
         else if (password !== password2) {
@@ -26,13 +38,14 @@ const RegistrationForm = () => {
         else if (password.length < 8 || password.length > 30) {
             setError(errors => [...errors, "Password must be between 8 and 30 characters long!"]);
         }
+        
         else if (error.length === 0) {
 
 
             const user = {
-                first_name: firstName,
-                last_name: lastName,
-                reg_email: email,
+                first_name: firstName.trim(),
+                last_name: lastName.trim(),
+                reg_email: email.trim(),
                 reg_password: password
             }
             axios.post("http://localhost:3001/user/createUser", user)
@@ -66,9 +79,14 @@ const RegistrationForm = () => {
             <input type="text" name="first_name" placeholder="Your First Name" value={firstName} required
                 onChange={e => setFirstName(e.target.value)} />
             <br />
+            {error.includes("First Name must be at least 2 characters long") ? <p style={{ color: "red" }}>First Name must be at least 2 characters long</p> : null}
+            {error.includes("First Name must contain letters only") ? <p style={{ color: "red" }}>First Name must contain letters only</p> : null}
             <input type="text" name="last_name" placeholder="Your Last Name" value={lastName} required
                 onChange={e => setLastName(e.target.value)} />
             <br />
+            {error.includes("Last Name must be at least 2 characters long") ? <p style={{ color: "red" }}>Last Name must be at least 2 characters long</p> : null}
+            {error.includes("Last Name must contain letters only") ? <p style={{ color: "red" }}>Last Name must contain letters only</p> : null}
+          
             <input type="email" name="reg_email" placeholder="E-mail Address" value={email} required
                 onChange={e => setEmail(e.target.value)} />
             <br />
