@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {post} from "../../../../redux/actions/post.action";
+import {getPosts} from "../../../../redux/actions/getPosts.action";
 import {useSelector, useDispatch} from "react-redux";
 
 const PostForm = (props) => {
@@ -20,15 +21,20 @@ const PostForm = (props) => {
     const handlePostComment = (e) => {
         e.preventDefault();
         const newComment = {
+            id:Math.random() * 1000000000,
             body:comment,
-            post_id:post_id,
             user:firstName + " " + lastName,
             user_id:user_id,
             user_pic:user_pic,
             deleted:false,
             likes:0
         }
-        dispatch(post("http://localhost:3001/comments/postComment",newComment))
+        dispatch(post("http://localhost:3001/comments/postComment",{post_id,newComment}))
+        .then((res)=>{
+            if(res.status === 200){
+            setComment("");
+            dispatch(getPosts(user_id))
+        }})
     }
 
     return (

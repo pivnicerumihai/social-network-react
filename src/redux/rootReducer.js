@@ -10,7 +10,6 @@ import acceptFriendReducer from "./reducers/acceptFriend";
 import declineFriendReducer from "./reducers/declineFriend";
 import searchPeopleReducer from "./reducers/searchPeople";
 import getAllFriendsReducer from "./reducers/getAllFriends";
-import getCommentsReducer from "./reducers/getComments";
 import {combineReducers} from "redux";
 
 import { persistReducer } from "redux-persist";
@@ -35,7 +34,6 @@ const rootReducer = combineReducers({
     declineFriend:declineFriendReducer,
     searchPeople:searchPeopleReducer,
     getAllFriends:getAllFriendsReducer,
-    getComments:getCommentsReducer
 });
 
 export default persistReducer(persistConfig,rootReducer);

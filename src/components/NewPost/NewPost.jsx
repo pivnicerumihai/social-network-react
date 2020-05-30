@@ -40,6 +40,7 @@ function NewPost(props) {
                 user_to_pic: props.profile_pic,
                 user_closed: false,
                 deleted: false,
+                comments:[],
                 likes: 0
             }
             dispatch(post("http://localhost:3001/posts/createNewPost", newPost))
@@ -65,6 +66,7 @@ function NewPost(props) {
                 user_closed: false,
                 user_to_id: PostedToId,
                 user_to_pic: friendImg,
+                comments:[],
                 deleted: false,
                 likes: 0
             }

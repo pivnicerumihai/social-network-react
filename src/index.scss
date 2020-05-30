@@ -690,7 +690,7 @@ $secondary-color : #e5e5e5;
                         color:$secondary-color;
                     }
                 }
-                p{
+                .post-body{
                     
                     background-color:#e5e5e5;
                     padding: 7px 10px 7px 10px;
@@ -733,6 +733,74 @@ $secondary-color : #e5e5e5;
                     margin-left:2.5%;
                     display:flex;
                     flex-direction: column;
+                    .comment{
+                        display:flex;
+                        width:50vw;
+                        max-width:50vw;
+                        margin-top:10px;
+                        form{
+                            flex:1;
+                            textarea{
+                                width:100%;
+                                outline:none;
+                                padding: 10px 15px 10px 15px;
+                                resize: none;
+                            }
+                            input{
+                                color:$primary-color;
+                                background-color: white;
+                                border:none;
+                                font-size:0.7em;
+                                &:hover{
+                                    text-decoration: underline;
+                                    cursor:pointer;
+                                }
+                            }
+                    }
+                        .comment_details{                           
+                            display:flex;
+                            width:17.5%;
+                            align-items: center;
+                        }
+                        .comment_options{
+                         
+                            width:77.5%;
+                          
+                            h5{
+                                border:1px solid $primary-color;
+                                border-radius:25px;
+                                background-color:#ededed;
+                                padding: 10px 15px 10px 15px;
+                                line-height:17px;
+                            }
+                            button{
+                                display:inline-block;
+                                font-size:0.7em;
+                                border:none;
+                                color:$primary-color;
+                                margin-left:0.5em;
+                                background-color: white;
+                                &:hover{
+                                    cursor:pointer;
+                                    background-color: white;
+                                    color:$primary-color;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                        p{
+                            align-self: center;
+                            color:$primary-color;
+                            padding:2px 4px;
+                            text-align: center;
+                            border-radius:25px;
+                            &:hover {
+                                color:white;
+                                background-color: $primary-color;
+                                cursor:pointer;
+                            }
+                        }
+                    }
                     .post_comment{
                         margin-top:1em;
                         margin-left:1em;
@@ -745,6 +813,10 @@ $secondary-color : #e5e5e5;
                         
                     }
                     
+                    img{
+                        width:50px;
+                    }
+
                     input[type="submit"]{
                         text-decoration: none;
                         color: $primary-color;
@@ -772,7 +844,6 @@ $secondary-color : #e5e5e5;
                     border-radius:15px;
                     padding:3px 10px 3px 10px;
                     max-height:20px;
-                    max-width:5%;
                     flex:0;
                 }
              
