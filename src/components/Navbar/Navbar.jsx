@@ -7,12 +7,11 @@ import SettingsDropdown from "./SettingsDropdown/SettingsDropdown";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSlidersH, faHome, faSignOutAlt, faUsers } from '@fortawesome/free-solid-svg-icons'
-import { logout } from "../../redux/actions/login.action";
+
 import { useDispatch, useSelector } from "react-redux";
 
-function Navbar() {
+function Navbar(props) {
     const history = useHistory();
-    const dispatch = useDispatch();
     let friend_requests = useSelector(state => state.login.userDetails.friend_requests);
     
     const [friendRequests,toggleFriendRequests] = useState(false);
