@@ -64,6 +64,7 @@ const RegistrationForm = () => {
                         setPassword2("");
                         setError([]);
                         setSuccess(true);
+                        
                     }
                     else{
                         console.log(res);

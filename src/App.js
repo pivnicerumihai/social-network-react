@@ -2,6 +2,7 @@ import React from 'react';
 import SignUpSignIn from "./pages/SignUpSignIn";
 import ProfilePage from "./pages/ProfilePage";
 import FriendPage from "./pages/FriendPage";
+import Settings from "./pages/Settings";
 import Navbar from "./components/Navbar/Navbar";
 import Background from "./assets/images/LaptopBackground.jpg";
 import { BrowserRouter as Router, Route} from "react-router-dom";
@@ -17,7 +18,8 @@ function App(){
       <Router>
         <Navbar />
         <Route exact path="/" component={ProfilePage}/>
-        <Route path="/:friend_id" component={FriendPage}/>
+        <Route exact path="/:friend_id" component={FriendPage}/>
+        <Route path="/user/settings" component={Settings}/>
       </Router>
       )
     }

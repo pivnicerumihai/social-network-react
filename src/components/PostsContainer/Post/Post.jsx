@@ -85,7 +85,7 @@ function Post(props) {
                         toggleCommentsDropdown(!commentsDropdown)
 
                     }}>
-                    See Comments ({comments.length})
+                    {comments.length > 0 ? `See Comments(${comments.length})` : "Add Comment"}
                     </button>
 
             }
