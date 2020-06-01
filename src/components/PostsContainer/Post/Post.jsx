@@ -1,16 +1,19 @@
 import React, { Fragment, useState } from "react";
 import Comments from "./Comments/Comments"
 import PostForm from "./PostForm/PostForm";
-import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 import { deletePost } from "../../../redux/actions/deletePost.action";
+import { post } from "../../../redux/actions/post.action";
 import { getPosts } from "../../../redux/actions/getPosts.action";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit,faBan } from '@fortawesome/free-solid-svg-icons'
 
 function Post(props) {
     const { post_id, posted_to, added_by_pic, added_by_id, posted_by, post_body, profile_pic, user_to_id,comments } = props;
     const [commentsDropdown, toggleCommentsDropdown] = useState(false);
+    const [editing, setEditing] = useState(false);
+    const [editedPost, setEditedPost] = useState(null);
     const dispatch = useDispatch();
 
     const user_id = useSelector(state => state.login.userDetails._id);
@@ -24,17 +27,57 @@ function Post(props) {
                 }
             })
     }
+
+
+    const handleEditPost = (post_id,post_content) => {
+        return function(e){
+            e.preventDefault();
+            dispatch(post("http://localhost:3001/posts/editPost",{post_id,post_content}))
+            .then((res)=>{
+                if(res.status === 200){
+                    dispatch(getPosts(user_id)).then(()=>setEditing(false));
+                  
+                }
+            });
+
+        }
+    }
+
     return (
 
         <div className="post">
             <div className="post-by">
+            <Link className="link" style={{ textDecoration: "none" }} to={added_by_id}>
                 <img src={added_by_pic} alt="Not loaded"></img>
-                <Link className="link" style={{ textDecoration: "none" }} to={added_by_id}>
                     <h4>{posted_by}</h4>
                 </Link>
-                {added_by_id === user_id ? <span onClick={handleDeletePost}>x</span> : null}
+                {added_by_id === user_id ? 
+                <Fragment>
+                    <span className="edit_post"
+                     onClick={()=>{
+                        setEditing(!editing);
+                        setEditedPost(post_body)
+                    }}><FontAwesomeIcon icon={faEdit}/>
+                    </span>
+                    <span className= "delete_post"
+                     onClick={handleDeletePost}>
+                         <FontAwesomeIcon icon={faBan}/>
+                         </span> 
+                         </Fragment>
+                : null}
             </div>
-            <p className="post-body">{post_body}</p>
+            <div className="post-body">{editing ? 
+            <form onSubmit={handleEditPost(post_id,editedPost)}>
+                <textarea 
+                value={editedPost}
+                onChange={ e => setEditedPost(e.target.value)}
+                ></textarea>
+                <br/>
+                <input type="submit" value="Save Post"/>
+            </form> 
+            : 
+            post_body}
+            </div>
             {posted_to.length === 0 ?
                 <div className="posted-to"></div>
                 :

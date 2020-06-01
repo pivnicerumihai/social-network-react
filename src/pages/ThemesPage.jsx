@@ -17,8 +17,6 @@ const ThemesPage = () => {
 
     return (
         updated ?
-
-
             <div style={{ textAlign: "center", width: "100%", height: "100%", marginTop: "20%", fontSize: "18px" }}>
                 Update Successful!
              <br />

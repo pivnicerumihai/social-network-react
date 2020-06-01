@@ -725,7 +725,7 @@ body {
         }
 
         .posts_container {
-            min-width: 60vw;
+            flex:0.9;
             height: 20vh;
             float: right;
             margin-right: 5%;
@@ -734,46 +734,72 @@ body {
                 margin-top: 15px;
                 display: flex;
                 flex-direction: column;
-
                 span {
                     align-self: center;
                     margin-right: 15px;
                     color: var(--secondary-color);
-                    width: 20px;
                     text-align: center;
 
                     &:hover {
-                        background-color: var(--hover-color);
+                        color:var(--hover-color);
                         cursor: pointer;
-                        border-radius: 15px;
+
 
                     }
                 }
-
+               
                 .post-by {
                     background-color: var(--primary-color);
-                    display: flex;
-                    width: 100%;
+                    display: inline-flex;
                     border-top-right-radius: 15px;
                     border-top-left-radius: 55px;
-
-                    img {
-                        margin-left: 15px;
+                    flex-wrap: nowrap;
+                    width:100%;
+                    .link{
+                        display:flex;
+                        flex-grow:1;
+                        align-items: center;
+                        h4{
+                            margin-left:10px;
+                            color: var(--secondary-color);
+                        }
                     }
 
-                    h4 {
-                        align-self: center;
-                        color: var(--secondary-color);
+                    .edit_post{
+                        margin-right:5px;
+                        outline:none;
+                        border:none;
+
+
                     }
                 }
-
                 .post-body {
-
+          
                     background-color: var(--secondary-color);
                     padding: 7px 10px 7px 10px;
-                    width: 97.6%;
+                    width: calc(100% - 20px);
                     min-height: 50px;
+                    textarea{
 
+                        padding:5px;
+                        width:calc(100% - 5px);
+                        height:50px;
+                        background-color: var(--secondary-color);
+                        resize:none;
+                    }
+                    input[type="submit"]{
+                        border-radius:7px;
+                        border:1px solid var(--primary-color);
+                        color:var(--primary-color);
+                        font-weight: 600;
+                        background-color:var(--font-color-1);
+                        outline:none;
+                        &:hover{
+                            cursor: pointer;
+                            color:var(--font-color-1);
+                            background-color:var(--primary-color);
+                        }
+                    }
                 }
 
                 .posted-to {

@@ -6,7 +6,7 @@ import SettingsDropdown from "./SettingsDropdown/SettingsDropdown";
 
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSlidersH, faHome, faSignOutAlt, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faSlidersH, faHome, faUsers } from '@fortawesome/free-solid-svg-icons'
 
 import { useDispatch, useSelector } from "react-redux";
 
