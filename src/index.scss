@@ -598,11 +598,9 @@ body {
 
         .post_form {
             margin-right: 4%;
-            display: flex;
+            display: flex;  
             flex-direction: column;
             padding: 10px 11px 0 7px;
-            justify-content: space-evenly;
-
         }
 
         .post_btns {
@@ -610,12 +608,13 @@ body {
         }
 
         textarea {
+            width:60vw;
             max-height: 22vh;
             padding: 5px 10px 5px 10px;
             border: 1px solid var(--primary-color);
             border-radius: 7px;
             resize: none;
-
+            flex-basis:100%;
             &:focus {
                 outline: none;
             }
@@ -780,7 +779,9 @@ body {
                     width: calc(100% - 20px);
                     min-height: 50px;
                     textarea{
-
+                        border-radius:7px;
+                        outline:none;
+                        border:1px solid var(--primary-color);
                         padding:5px;
                         width:calc(100% - 5px);
                         height:50px;
@@ -1299,6 +1300,8 @@ body {
         }
 
         .theme-preview {
+            position: relative;
+            max-width:60%;
             text-align: center;
             background-color: var(--font-color-1);
             border-radius: 7px;
@@ -1310,7 +1313,7 @@ body {
                 margin-top:20%;
                 font-size:1.2em;
             }
-            .preview_theme{
+            .preview_theme,.create_theme_title{
                 border-top-right-radius:7px;
                 border-top-left-radius: 7px;
                 background-color:var(--primary-color);
@@ -1346,7 +1349,34 @@ body {
                 border-radius:7px;
 
             }
+
+            .colour-box{
+                border:2px solid grey;
+                width:15px;
+                height:15px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
+
+.create_theme_container{
+   height:80%;
+    display:flex;
+
+    .theme_color{
+        text-align: center;
+    align-self: flex-end;
+   flex-grow: 1;
+   max-width:20%;
+   p{
+       font-size:16px;
+       padding:7px;
+       color:var(--primary-color);
+   }
+}
+}
+
 }

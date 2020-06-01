@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../redux/actions/login.action";
-
+import {getTheme} from "../redux/actions/getTheme.action";
 import ProfileBar from "../components/ProfileBar/ProfileBar";
 import NewPost from "../components/NewPost/NewPost";
 import PostsContainer from "../components/PostsContainer/PostsContainer";
@@ -10,6 +10,7 @@ import FriendsBar from "../components/FriendsBar/FriendsBar";
 function ProfilePage(props) {
     const userDetails = useSelector(state => state.login.userDetails);
     const userPosts = useSelector(state => state.getPosts.posts);
+   
     const { _id, first_name, last_name, num_likes, num_posts, profile_pic, friend_array,theme } = userDetails;
     const name = first_name + " " + last_name;
     const dispatch = useDispatch();
@@ -37,10 +38,20 @@ function ProfilePage(props) {
 
             changeTheme("#5B7553", "#8EB897", "#C3E8BD", "rgb(19, 49, 10)", "white", "rgb(66, 83, 60)", "#bdbec5")
         }
+        else{
+            dispatch(getTheme(_id,theme))
+            .then((res)=>{
+            
+                    changeTheme(res.primary_color, res.hover_color, res.secondary_color, res.shadow, "white", res.third_color)
+                
+         
+            })
+        }
         dispatch(updateUser(_id))
-    }, [_id, dispatch, userPosts])
+    }, [_id, dispatch, userPosts,theme])
 
     return (
+     
         <div className="home">
             <div className="top-container">
                 <ProfileBar

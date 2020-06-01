@@ -24,7 +24,13 @@ function Navbar(props) {
             </Link>
             <SearchBar/>
             <span className="icons">
-            <Link to="/"><button> <FontAwesomeIcon icon={faHome} size="2x" /></button></Link>
+            <Link to="/"><button
+             onClick={()=>{
+                toggleFriendRequests(false);
+                toggleSettings(false);
+
+             }}> 
+            <FontAwesomeIcon icon={faHome} size="2x" /></button></Link>
                 <button 
                 onClick={()=>
                     {toggleFriendRequests(!friendRequests);
@@ -45,7 +51,7 @@ function Navbar(props) {
                 <button onClick={()=>{
                     toggleSettings(!settings);
                     toggleFriendRequests(false)}}><FontAwesomeIcon icon={faSlidersH} size="2x" /></button>
-                {settings ? <SettingsDropdown/> : null}
+                {settings ? <SettingsDropdown click={()=>toggleSettings(false)}/> : null}
             </span>
         </nav>
     )
