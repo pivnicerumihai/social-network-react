@@ -1,11 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { SketchPicker } from "react-color";
 import SaveButton from "./SaveButton/SaveButton";
 
 const CreateTheme = (props) => {
     const { color, name, click } = props;
-    let [newColor, setNewColor] = useState(getComputedStyle(document.body, null).getPropertyValue(`--${color}`))
-    let [picker, togglePicker] = useState(false);
+    const [newColor, setNewColor] = useState(getComputedStyle(document.body, null).getPropertyValue(`--${color}`))
+    const [picker, togglePicker] = useState(false);
+    const [saved,setSaved] = useState(null);
     return (
         <div className="theme_color">
             {picker ?
@@ -14,6 +15,7 @@ const CreateTheme = (props) => {
                         color={newColor}
                         onChange={(selected_color) => {
                             setNewColor(selected_color.hex);
+                            setSaved(false)
                             document.body.style.setProperty(`--${color}`, newColor)
                         }}
                     />
@@ -26,7 +28,7 @@ const CreateTheme = (props) => {
                 onClick={() => { togglePicker(!picker) }}
             > </div>
          <p>{name}</p>
-        <SaveButton click={click} color={newColor}/>
+        <SaveButton click={click} color={newColor} saved={saved} setSaved={()=>setSaved(true)}/>
         </div>
     )
 }
