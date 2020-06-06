@@ -6,7 +6,7 @@ import { getPosts } from "../../../../redux/actions/getPosts.action";
 
 const Comments = (props) => {
 
-    const { comment_id, body, post_id, user, user_id, added_by, user_pic } = props;
+    const { comment_id, body, post_id, user, user_id, added_by, user_pic, date_added } = props;
     const [edit, toggleEdit] = useState(false);
     const [commentBody, setCommentBody] = useState("");
     const dispatch = useDispatch();
@@ -29,6 +29,69 @@ const Comments = (props) => {
                     toggleEdit(false)
                 }
             })
+        
+    }
+
+    const time = Math.round(Math.floor(Date.now() - date_added) / 1000);
+    let time_difference;
+
+    if (time < 60) {
+        if(time  < 10){
+        time_difference = "Just now";
+        
+    }
+        else{
+            time_difference = time + " seconds ago"
+        }
+}
+    else if(time < 3600){ 
+        if(Math.floor(time/60) === 1)
+        time_difference = Math.floor(time/60) + " minute ago ";
+        else{
+            time_difference = Math.floor(time/60) + " minutes ago ";
+        }
+
+    }
+    else if(time < 3600*24){ // seconds in a day
+        if(Math.floor(time/3600) === 1){
+            time_difference = Math.floor(time/3600) + " hour ago"
+        }
+        else
+        {
+            time_difference = Math.floor(time/3600) + " hours ago"
+        }
+    }
+    else if(time < 3600*24*7){ //seconds in week
+        if(Math.floor(time/86400) === 1){
+            time_difference = Math.floor(time/86400) + " day ago"
+        }
+        else{
+            time_difference = Math.floor(time/86400) + "days ago"
+        }
+    }
+    else if ( time < 3600*24*7*4.3){ // seconds in a month(4,3 weeks)
+        if(Math.floor(time/604800) === 1){
+            time_difference = Math.floor(time/604800) + " week ago"
+
+        }
+        else{
+            time_difference = Math.floor(time/604800) + " weeks ago"
+        }
+    }
+    else if( time < (3600 * 24 * 7 * 4,3 * 12)){
+        if(Math.floor(time/(3600 * 24 * 7 * 4,3 ))=== 1){
+            time_difference = Math.floor(time/(3600 * 24 * 7 * 4.3)) + " month ago"
+        }
+        else{
+
+            time_difference = Math.floor(time/(3600*24*7*4.3)) + " months ago"
+        }
+    }
+    else if(Math.floor(time/(3600 * 24 * 7 * 4.3 * 12)) === 1){
+        time_difference = "1 year ago";
+    }
+    else{
+        time_difference = Math.floor(time/(3600 * 24 * 7 * 4.3 * 12)) + " years ago"
     }
 
     return (
@@ -45,7 +108,9 @@ const Comments = (props) => {
                             value={commentBody}
                             onChange={e => {
                                 setCommentBody(e.target.value)
-                            }}>
+                            }}
+                            required
+                            >
                         </textarea>
                         <input type="submit" value="Save"></input>
                         <input onClick={() => toggleEdit(false)} type="button" value="Cancel Edit" />
@@ -66,6 +131,7 @@ const Comments = (props) => {
                                     setCommentBody(body);
                                 }}>Edit</button>
                                 <button onClick={handleDelete}>Delete</button>
+                                <p className="comments_interval">{time_difference === "Just now" ? time_difference : "Added " + time_difference}</p>
                             </Fragment>
                             : null}
                     </div>

@@ -41,7 +41,8 @@ function NewPost(props) {
                 user_closed: false,
                 deleted: false,
                 comments:[],
-                likes: 0
+                likes: 0,
+                date_added: Date.now()
             }
             dispatch(post("http://localhost:3001/posts/createNewPost", newPost))
                 .then(res => {
@@ -68,7 +69,8 @@ function NewPost(props) {
                 user_to_pic: friendImg,
                 comments:[],
                 deleted: false,
-                likes: 0
+                likes: 0,
+                date_added: Date.now()
             }
             dispatch(post("http://localhost:3001/posts/createNewPost", newPost))
                 .then(res => {

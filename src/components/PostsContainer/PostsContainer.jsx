@@ -54,7 +54,7 @@ function PostsContainer(props) {
           posts.map((el, i) => {
             if (i <= postsToLoad) {
               return (
-                <Post key={i} post_id={el._id} comments = {el.comments} added_by_id={el.id} posted_by={el.added_by} added_by_pic={el.added_by_pic} user_to_id={el.user_to_id} profile_pic={el.user_to_pic} posted_to={el.user_to} post_body={el.body} />
+                <Post key={i} post_id={el._id} comments = {el.comments} added_by_id={el.id}  date_added = {el.date_added} posted_by={el.added_by} added_by_pic={el.added_by_pic} user_to_id={el.user_to_id} profile_pic={el.user_to_pic} posted_to={el.user_to} post_body={el.body} />
 
               )
             }

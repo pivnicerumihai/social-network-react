@@ -27,7 +27,8 @@ const PostForm = (props) => {
             user_id:user_id,
             user_pic:user_pic,
             deleted:false,
-            likes:0
+            likes:0,
+            date_added:Date.now()
         }
         dispatch(post("http://localhost:3001/comments/postComment",{post_id,newComment}))
         .then((res)=>{
@@ -41,7 +42,8 @@ const PostForm = (props) => {
         <form className="post_comment" onSubmit={handlePostComment}>
             <textarea placeholder="Write a Comment"
                 value={comment}
-                onChange={e => setComment(e.target.value)}>
+                onChange={e => setComment(e.target.value)}
+                required>
             </textarea>
             <input type="Submit" defaultValue="Add Comment" />
         </form>
