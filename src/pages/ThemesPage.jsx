@@ -54,17 +54,17 @@ const ThemesPage = () => {
         }]
     const handleApplyTheme = (e) => {
         e.preventDefault();
-        
-            dispatch(post("http://localhost:3001/user/updateCustomTheme", { newTheme, themeName, user_id }))
-                .then(() => dispatch(post("http://localhost:3001/user/updateTheme", { theme: themeName, user_id })))
-                .then((res) => {
-                    if (res.status === 200) {
-                        setUpdated(true);
-                        dispatch(updateUser(user_id))
-                        setTimeout(() => history.push("/"), 2000)
-                    }
-                })
-        
+
+        dispatch(post("http://localhost:3001/user/updateCustomTheme", { newTheme, themeName, user_id }))
+            .then(() => dispatch(post("http://localhost:3001/user/updateTheme", { theme: themeName, user_id })))
+            .then((res) => {
+                if (res.status === 200) {
+                    setUpdated(true);
+                    dispatch(updateUser(user_id))
+                    setTimeout(() => history.push("/"), 2000)
+                }
+            })
+
 
     }
 
@@ -110,8 +110,13 @@ const ThemesPage = () => {
                                 </div> : null}
                             {themesData.map((el, i) => {
                                 return <Theme key={i} click={() => {
-                                    setPreview(el.preview)
+                                    setCustomThemeColors({
+                                        primary_color: el.primary_color,
+                                        secondary_color: el.secondary_color,
+                                        shadow: el.shadow
+                                    })
                                     setTheme(el.themeName)
+                                    setPreview("premade_theme")
                                 }}
                                     themeName={el.themeName} />
                             })}
@@ -164,12 +169,14 @@ const ThemesPage = () => {
                                             />
                                             <br />
                                             <br />
-                                            <input className="apply_theme_btn" type="submit" value="Apply Theme"></input>                                 </form>
+                                            <input className="apply_theme_btn" type="submit" value="Apply Theme"></input>
+                                        </form>
                                     </Fragment>
                                     :
                                     preview === "preview_custom_theme" ?
                                         <Fragment>
                                             <div className="create_theme_title">Preview Custom Theme</div>
+                                            <p className="preview_tips">Click on Use Theme to start using the theme below or Delete Theme to delete your theme</p>
                                             <PreviewThemeBox colors={customThemeColors} />
                                             <br />
                                             <button className="apply_custom_theme"
@@ -189,7 +196,6 @@ const ThemesPage = () => {
                                                 onClick={
                                                     () => {
                                                         setPopup(true);
-
                                                     }
                                                 }>
                                                 Delete Theme
@@ -197,26 +203,27 @@ const ThemesPage = () => {
                                         </Fragment>
 
                                         :
+                                    
                                         <Fragment>
-                                            <p className="preview_theme">Preview Theme</p>
-                                            <p className="preview_tips">Click on Apply to start using the theme below</p>
-                                            <img src={preview} alt="preview"/>
-                                            <br />
-                                            <button
-                                                className="apply_theme_btn"
-                                                onClick={() => {
-                                                    dispatch(post("http://localhost:3001/user/updateTheme", { theme, user_id }))
-                                                        .then((res) => {
-                                                            if (res.status === 200) {
-                                                                setUpdated(true);
-                                                                dispatch(updateUser(user_id))
-                                                                setTimeout(() => history.push("/"), 2000)
-                                                            }
-                                                        })
-                                                }
-                                                }>
-                                                Apply Theme</button>
-                                        </Fragment>
+                                    <p className="preview_theme">Preview Theme</p>
+                                    <p className="preview_tips">Click on Apply to start using the theme below</p>
+                                   <PreviewThemeBox colors = {customThemeColors}/>
+                                   
+                                    <br />
+                                    <button
+                                        className="apply_custom_theme"
+                                        onClick={() => {
+                                            dispatch(post("http://localhost:3001/user/updateTheme", { theme, user_id }))
+                                                .then((res) => {
+                                                    if (res.status === 200) {
+                                                        setUpdated(true);
+                                                        setTimeout(() => history.push("/"), 2000)
+                                                    }
+                                                })
+                                        }
+                                        }>
+                                        Apply Theme</button>
+                                </Fragment>
                             }
 
                         </div>

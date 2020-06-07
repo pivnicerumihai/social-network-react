@@ -1,17 +1,25 @@
 [{
     "themeName" : "Classic",
-    "preview" : "https://snipboard.io/gLBt01.jpg"
+    "primary_color" : "#643434",
+    "secondary_color" : "#e5e5e5",
+    "shadow" : "#745252"
 }
 ,{
     "themeName" : "Blue",
-    "preview" : "https://snipboard.io/rdEYb7.jpg"
+    "primary_color" : "#2F4858",
+    "secondary_color" : "#86BBD8",
+    "shadow" : "#181b29"
 }
 ,{
     "themeName" : "Dark",
-    "preview" : "https://snipboard.io/IPNzXL.jpg"
+    "primary_color" : "#3a3b3c",
+    "secondary_color" : "#797b7c",
+    "shadow" : "white"
 }
 ,{
     "themeName" : "Light",
-    "preview" : "https://snipboard.io/8nyHWa.jpg"
+    "primary_color" : "#5B7553",
+    "secondary_color" : "#C3E8BD",
+    "shadow" : "white"
 }
 ]

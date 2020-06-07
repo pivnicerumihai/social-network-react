@@ -1,63 +1,10 @@
-"filename", "language", "JavaScript", "JSON", "JavaScript React", "SCSS", "comment", "blank", "total"
-"c:\Users\mcpiv\Learning\React\social-network\src\App.js", "JavaScript", 68, 0, 0, 0, 0, 10, 78
-"c:\Users\mcpiv\Learning\React\social-network\src\App.test.js", "JavaScript", 8, 0, 0, 0, 0, 2, 10
-"c:\Users\mcpiv\Learning\React\social-network\src\Themes.json", "JSON", 0, 17, 0, 0, 0, 0, 17
-"c:\Users\mcpiv\Learning\React\social-network\src\components\CreateTheme\CreateTheme.jsx", "JavaScript React", 0, 0, 32, 0, 0, 4, 36
-"c:\Users\mcpiv\Learning\React\social-network\src\components\CreateTheme\SaveButton\SaveButton.jsx", "JavaScript React", 0, 0, 17, 0, 0, 1, 18
-"c:\Users\mcpiv\Learning\React\social-network\src\components\CustomTheme\CustomTheme.jsx", "JavaScript React", 0, 0, 7, 0, 0, 2, 9
-"c:\Users\mcpiv\Learning\React\social-network\src\components\FriendsBar\FriendDiv\FriendDiv.jsx", "JavaScript React", 0, 0, 12, 0, 0, 6, 18
-"c:\Users\mcpiv\Learning\React\social-network\src\components\FriendsBar\FriendsBar.jsx", "JavaScript React", 0, 0, 27, 0, 0, 6, 33
-"c:\Users\mcpiv\Learning\React\social-network\src\components\LoadingSpinner\LoadingSpinner.jsx", "JavaScript React", 0, 0, 5, 0, 0, 2, 7
-"c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\FriendRequestsDropdown\FriendRequestsDropdown.jsx", "JavaScript React", 0, 0, 38, 0, 0, 8, 46
-"c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\Navbar.jsx", "JavaScript React", 0, 0, 52, 0, 0, 8, 60
-"c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\SearchBar\PeopleDropdown\PeopleDropdown.jsx", "JavaScript React", 0, 0, 14, 0, 0, 5, 19
-"c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\SearchBar\SearchBar.jsx", "JavaScript React", 0, 0, 33, 0, 0, 5, 38
-"c:\Users\mcpiv\Learning\React\social-network\src\components\Navbar\SettingsDropdown\SettingsDropdown.jsx", "JavaScript React", 0, 0, 23, 0, 0, 3, 26
-"c:\Users\mcpiv\Learning\React\social-network\src\components\NewPost\FriendsList\FriendsList.jsx", "JavaScript React", 0, 0, 12, 0, 0, 4, 16
-"c:\Users\mcpiv\Learning\React\social-network\src\components\NewPost\NewPost.jsx", "JavaScript React", 0, 0, 138, 0, 0, 19, 157
-"c:\Users\mcpiv\Learning\React\social-network\src\components\PostsContainer\Post\Comments\Comments.jsx", "JavaScript React", 0, 0, 71, 0, 0, 8, 79
-"c:\Users\mcpiv\Learning\React\social-network\src\components\PostsContainer\Post\Post.jsx", "JavaScript React", 0, 0, 124, 0, 0, 18, 142
-"c:\Users\mcpiv\Learning\React\social-network\src\components\PostsContainer\Post\PostForm\PostForm.jsx", "JavaScript React", 0, 0, 43, 0, 0, 8, 51
-"c:\Users\mcpiv\Learning\React\social-network\src\components\PostsContainer\PostsContainer.jsx", "JavaScript React", 0, 0, 75, 0, 0, 12, 87
-"c:\Users\mcpiv\Learning\React\social-network\src\components\ProfileBar\ProfileBar.jsx", "JavaScript React", 0, 0, 108, 0, 0, 16, 124
-"c:\Users\mcpiv\Learning\React\social-network\src\components\RegistrationForm\RegistrationForm.jsx", "JavaScript React", 0, 0, 100, 0, 0, 14, 114
-"c:\Users\mcpiv\Learning\React\social-network\src\components\SignInForm\SignInForm.jsx", "JavaScript React", 0, 0, 28, 0, 0, 7, 35
-"c:\Users\mcpiv\Learning\React\social-network\src\components\Theme\Theme.jsx", "JavaScript React", 0, 0, 10, 0, 0, 2, 12
-"c:\Users\mcpiv\Learning\React\social-network\src\index.js", "JavaScript", 17, 0, 0, 0, 3, 6, 26
-"c:\Users\mcpiv\Learning\React\social-network\src\index.scss", "SCSS", 0, 0, 0, 1207, 6, 252, 1465
-"c:\Users\mcpiv\Learning\React\social-network\src\pages\FriendPage.jsx", "JavaScript React", 0, 0, 55, 0, 1, 15, 71
-"c:\Users\mcpiv\Learning\React\social-network\src\pages\ProfilePage.jsx", "JavaScript React", 0, 0, 35, 0, 0, 8, 43
-"c:\Users\mcpiv\Learning\React\social-network\src\pages\Settings.jsx", "JavaScript React", 0, 0, 171, 0, 0, 12, 183
-"c:\Users\mcpiv\Learning\React\social-network\src\pages\SignUpSignIn.jsx", "JavaScript React", 0, 0, 20, 0, 0, 6, 26
-"c:\Users\mcpiv\Learning\React\social-network\src\pages\ThemesPage.jsx", "JavaScript React", 0, 0, 161, 0, 0, 17, 178
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\acceptFriend.action.js", "JavaScript", 32, 0, 0, 0, 0, 5, 37
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\declineFriend.action.js", "JavaScript", 31, 0, 0, 0, 0, 4, 35
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\deletePost.action.js", "JavaScript", 32, 0, 0, 0, 0, 4, 36
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\friendsList.action.js", "JavaScript", 11, 0, 0, 0, 0, 2, 13
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\getAllFriends.action.js", "JavaScript", 32, 0, 0, 0, 0, 5, 37
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\getFriendDetails.action.js", "JavaScript", 31, 0, 0, 0, 0, 4, 35
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\getFriendList.action.js", "JavaScript", 42, 0, 0, 0, 0, 8, 50
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\getPosts.action.js", "JavaScript", 33, 0, 0, 0, 0, 7, 40
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\hasAccount.action.js", "JavaScript", 5, 0, 0, 0, 0, 0, 5
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\login.action.js", "JavaScript", 53, 0, 0, 0, 0, 7, 60
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\post.action.js", "JavaScript", 32, 0, 0, 0, 0, 5, 37
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\searchPeople.action.js", "JavaScript", 34, 0, 0, 0, 0, 5, 39
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\actions\theme.action.js", "JavaScript", 10, 0, 0, 0, 0, 1, 11
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\acceptFriend.js", "JavaScript", 29, 0, 0, 0, 0, 3, 32
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\declineFriend.js", "JavaScript", 29, 0, 0, 0, 0, 3, 32
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\deletePost.js", "JavaScript", 30, 0, 0, 0, 0, 3, 33
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\friendsList.js", "JavaScript", 17, 0, 0, 0, 0, 2, 19
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\getAllFriends.js", "JavaScript", 28, 0, 0, 0, 0, 2, 30
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\getFriendDetails.js", "JavaScript", 31, 0, 0, 0, 0, 3, 34
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\getFriendList.js", "JavaScript", 45, 0, 0, 0, 0, 4, 49
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\getPosts.js", "JavaScript", 29, 0, 0, 0, 0, 1, 30
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\hasAccount.js", "JavaScript", 9, 0, 0, 0, 0, 3, 12
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\login.js", "JavaScript", 38, 0, 0, 0, 0, 1, 39
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\post.js", "JavaScript", 29, 0, 0, 0, 0, 1, 30
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\searchPeople.js", "JavaScript", 29, 0, 0, 0, 0, 2, 31
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\reducers\theme.js", "JavaScript", 12, 0, 0, 0, 0, 4, 16
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\rootReducer.js", "JavaScript", 37, 0, 0, 0, 0, 4, 41
-"c:\Users\mcpiv\Learning\React\social-network\src\redux\store.js", "JavaScript", 12, 0, 0, 0, 0, 4, 16
-"c:\Users\mcpiv\Learning\React\social-network\src\serviceWorker.js", "JavaScript", 98, 0, 0, 0, 31, 13, 142
-"c:\Users\mcpiv\Learning\React\social-network\src\setupTests.js", "JavaScript", 1, 0, 0, 0, 4, 1, 6
-"Total", "-", 974, 17, 1411, 1207, 45, 597, 4251
+"filename", "language", "JavaScript", "comment", "blank", "total"
+"c:\Users\mcpiv\Learning\React\social_network_api\Schemas\Comments.js", "JavaScript", 10, 0, 2, 12
+"c:\Users\mcpiv\Learning\React\social_network_api\Schemas\Posts.js", "JavaScript", 11, 0, 2, 13
+"c:\Users\mcpiv\Learning\React\social_network_api\Schemas\UserInfo.js", "JavaScript", 18, 0, 2, 20
+"c:\Users\mcpiv\Learning\React\social_network_api\routes\Comments.routes.js", "JavaScript", 36, 1, 10, 47
+"c:\Users\mcpiv\Learning\React\social_network_api\routes\Friend.routes.js", "JavaScript", 138, 4, 14, 156
+"c:\Users\mcpiv\Learning\React\social_network_api\routes\Posts.routes.js", "JavaScript", 169, 5, 17, 191
+"c:\Users\mcpiv\Learning\React\social_network_api\routes\User.routes.js", "JavaScript", 251, 8, 22, 281
+"c:\Users\mcpiv\Learning\React\social_network_api\server.js", "JavaScript", 50, 3, 9, 62
+"Total", "-", 683, 21, 78, 782

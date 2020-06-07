@@ -9,12 +9,7 @@ const PostForm = (props) => {
 
     const {post_id} = props;
 
-    const { firstName,lastName,user_id,user_pic} = useSelector(state=>({
-        firstName:state.login.userDetails.first_name,
-        lastName:state.login.userDetails.last_name,
-        user_id:state.login.userDetails._id,
-        user_pic:state.login.userDetails.profile_pic
-    }))
+    const { user_id }= useSelector(state=>({user_id:state.login.userDetails._id}))
     const dispatch = useDispatch();
 
 

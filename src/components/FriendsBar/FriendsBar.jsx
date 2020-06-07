@@ -20,7 +20,9 @@ function FriendsBar(props) {
     return (
         <div className="friends-bar">
             <h3>Friends</h3>
-            {name !== undefined && loading === false ? name.map((el, i) => {
+            {
+            name !== undefined && loading === false ? 
+            name.map((el, i) => {
                 return (<FriendDiv key={i} id={user_id[i]} name={el} img={profile_pic[i]} />)
             }) : loading === false && name === undefined ? <LoadingSpinner color={"white"}/> : 
             <p style={{backgroundColor:"white",width:"320px", padding:"15px",textAlign:"center"}}>

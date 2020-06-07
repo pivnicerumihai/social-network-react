@@ -27,7 +27,7 @@ function App(){
   useEffect(() => {
     if(isLogged){
     if (theme === "Blue") {
-      changeTheme("#4267B2", "#898F9C", "#e5e5e5", "#181b29", "white", "black")
+      changeTheme("#2F4858", "#33658a", "#86BBD8", "#181b29", "white", "black")
   }
   else if (theme === "Classic") {
       changeTheme("#643434", "#745252", "#e5e5e5", "#291818", "white", "white")

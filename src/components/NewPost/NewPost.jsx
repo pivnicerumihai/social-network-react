@@ -38,7 +38,7 @@ function NewPost(props) {
             }
             dispatch(post("http://localhost:3001/posts/createNewPost", newPost))
                 .then(res => {
-                    if (res.data === "Post saved") {
+                    if (res.status === 200) {
                         dispatch(getPosts(props.friend_id))
                     }
                     setPostBody("");
@@ -59,7 +59,7 @@ function NewPost(props) {
             }
             dispatch(post("http://localhost:3001/posts/createNewPost", newPost))
                 .then(res => {
-                    if (res.data === "Post saved") {
+                    if (res.status === 200) {
                         dispatch(getPosts(user_id))
                     }
                 })
@@ -81,8 +81,8 @@ function NewPost(props) {
     }
 
 
-
     return (
+    
         <form className="post_form" onSubmit={handleSubmit} >
             <textarea placeholder="Enter post content here" cols="120" rows="10"
                 value={postBody} required

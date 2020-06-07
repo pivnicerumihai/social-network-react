@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { post } from "../../redux/actions/post.action";
 import { updateUser } from "../../redux/actions/login.action";
 import { getFriendDetails } from "../../redux/actions/getFriendDetails.action";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 
 function ProfileBar(props) {
 
     const id = useSelector(state => state.login.userDetails._id);
+    const liked = useSelector(state => state.login.userDetails.liked);
     const user_first_name = useSelector(state => state.login.userDetails.first_name);
     const user_last_name = useSelector(state => state.login.userDetails.last_name);
     const user_profile_pic = useSelector(state => state.login.userDetails.profile_pic);
@@ -16,6 +19,7 @@ function ProfileBar(props) {
     const [sentFriendRequest, setSentFriendRequest] = useState(false);
     const [friendDropdown, setFriendDropdown] = useState(false);
     const [popup, setPopup] = useState(false);
+    const [likedMessage, setLikedMessage] = useState(null);
     const dispatch = useDispatch();
     const { profile_pic, friend_id, name, posts, likes } = props;
     const friend_list = useSelector(state => state.login.userDetails.friend_array);
@@ -68,6 +72,26 @@ function ProfileBar(props) {
             });
     }
 
+    const handleDislike = ( user_id, friend_id) => {
+        dispatch(post("http://localhost:3001/user/dislike", {user_id,friend_id}))
+        .then((res)=>{
+            if(res.status === 200 ){
+                dispatch(updateUser(id));
+                dispatch(getFriendDetails(friend_id))
+            }
+        })
+    }
+
+    const handleLike = (user_id,friend_id) => {
+        dispatch(post("http://localhost:3001/user/like", {user_id,friend_id}))
+        .then((res)=>{
+            if(res.status === 200){
+                dispatch(updateUser(id));
+                dispatch(getFriendDetails(friend_id))
+            }
+        })
+    }
+
     let friendship;
     let popupText;
     if (friend_id) {
@@ -116,6 +140,28 @@ function ProfileBar(props) {
                 <span className="num_posts">Number of posts: {posts} </span>
                 <br />
                 <span className="num_posts">Number of likes: {likes}</span>
+                <br/>
+                <br/>
+                {friend_list.includes(friend_id) ? 
+                liked.includes(friend_id)?
+                <button 
+                className="dislike_button"
+                onClick={()=>
+                    {handleDislike(id,friend_id)
+                     setLikedMessage("Disliked!")   
+                    }}
+                ><FontAwesomeIcon size="3x" icon={faThumbsUp}></FontAwesomeIcon></button>
+                :
+                <button 
+                className="like_button"
+                onClick={()=>
+                    {
+                    handleLike(id,friend_id)
+                    setLikedMessage("Liked!")   
+                }}
+                ><FontAwesomeIcon size="3x" icon={faThumbsUp}></FontAwesomeIcon></button> : null }
+            <br/>
+            {likedMessage}
             </div>
             {popup ? popupText : null}
         </div>

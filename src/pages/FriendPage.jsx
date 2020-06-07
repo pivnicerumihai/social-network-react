@@ -12,8 +12,6 @@ import { Redirect } from "react-router-dom";
 
 function FriendPage({ match: { params: { friend_id } } }) {
 
-
-
     const dispatch = useDispatch();
 
     useEffect(() => {

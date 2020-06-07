@@ -275,7 +275,7 @@ body {
         background-color: var(--primary-color);
         color: var(--secondary-color);
         font-family: 'Chelsea Market', cursive;
-        font-size: 55px;
+        font-size: 3.5em;
         text-shadow: 4px 4px var(--shadow);
 
         &:hover {
@@ -501,7 +501,8 @@ body {
             text-align: center;
 
             .profile_pic {
-                border-radius: 60px;
+                border: 1px solid var(--primary-color);
+                border-radius: 7px;
                 height: 100px;
                 width: 150px;
 
@@ -576,7 +577,29 @@ body {
             padding: 11px 10px 2px 10px;
             float: right;
             font-size: 17px;
-
+            text-align: center;
+            .like_button{
+                color:var(--primary-color);
+                border:none;
+                background:none;
+                outline:none;
+                &:hover{
+                    color:var(--hover-color);
+                    cursor:pointer;
+                
+                }
+            }
+            .dislike_button{
+                color:var(--hover-color);
+                outline:none;
+                background:none;
+                border:none;
+                filter:drop-shadow(0 0 5px var(--shadow));
+                transform: rotate(10deg);
+                &:hover{
+                    cursor:pointer;
+                }
+            }
         }
 
 
@@ -750,7 +773,11 @@ body {
                         display: flex;
                         flex-grow: 1;
                         align-items: center;
-
+                        margin-left:5px;
+                        img{
+                        border-radius:7px;
+                        
+                        }
                         h4 {
                             margin-left: 10px;
                             color: var(--secondary-color);
@@ -809,7 +836,7 @@ body {
                     background-color: var(--primary-color);
                     width: 100%;
                     border-bottom-right-radius: 55px;
-            
+             
                     .posted_to_others{
                         min-width:20%;
                         align-self:center;
@@ -860,7 +887,6 @@ body {
 
                 .comments-container {
 
-                    margin-top: -2px;
                     border: 1px solid var(--primary-color);
                     width: 95%;
                     margin-left: 2.5%;
@@ -871,8 +897,7 @@ body {
                         display: flex;
                         width: 50vw;
                         max-width: 50vw;
-                        margin-top: 10px;
-
+                        margin-top: 15px;
                         form {
                             flex: 1;
 
@@ -900,12 +925,15 @@ body {
                             display: flex;
                             width: 17.5%;
                             align-items: center;
-                        }
+                            h5{
+                            color:var(--primary-color);
+                            
+                        }}
 
                         .comment_options {
 
                             width: 77.5%;
-
+                            align-self: center;
                             h5 {
                                 border: 1px solid var(--primary-color);
                                 border-radius: 25px;
@@ -982,7 +1010,7 @@ body {
                     margin-left: 5px;
                     margin-right: 0;
                     align-self: center;
-                    border-radius: 15px;
+                    border-radius: 7px;
                     padding: 3px 10px 3px 10px;
                     max-height: 20px;
                     flex: 0;
@@ -1074,9 +1102,11 @@ body {
 
 
                 img {
+                    align-self: center;
                     padding: 10px 3px 5px 3px;
+                    height:30px;
                     max-width: 50px;
-                    border-radius: 25px;
+                    border-radius: 7px;
                 }
 
                 p {
@@ -1453,7 +1483,7 @@ body {
                 .preview_theme_container {
                     border: 1px solid var(--primary-color);
                     width: 80%;
-                    height: 80%;
+                    height: 70%;
                     border-radius: 7px;
                     margin-top: 5%;
                     position: relative;

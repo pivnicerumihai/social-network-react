@@ -11,11 +11,12 @@ import { faEdit, faBan } from '@fortawesome/free-solid-svg-icons'
 import Tooltip from "../../Tooltip/Tooltip";
 
 function Post(props) {
-    const { post_id, comments, added_by_id, added_by_pic, added_by_name, date_added, posted_by, added_to, deleted, post_body } = props;
+    const { post_id, comments, added_by_id, added_by_pic, added_by_name, date_added, added_to, post_body } = props;
     const [commentsDropdown, toggleCommentsDropdown] = useState(false);
     const [editing, setEditing] = useState(false);
     const [editedPost, setEditedPost] = useState(null);
     const [showMore,setShowMore] = useState(false);
+    const [popUp, togglePopUp] = useState(false);
     const dispatch = useDispatch();
 
     const user_id = useSelector(state => state.login.userDetails._id);
@@ -84,8 +85,9 @@ function Post(props) {
         const handleDeletePost = () => {
             dispatch(deletePost(post_id, user_id))
                 .then((res) => {
-                    if (res.data === "Post deleted!") {
+                    if (res.status === 200) {
                         dispatch(getPosts(user_id))
+                        togglePopUp(false)
                     }
                 })
         }
@@ -123,7 +125,7 @@ function Post(props) {
                             }}><FontAwesomeIcon icon={faEdit} />
                         </span>
                         <span className="delete_post"
-                            onClick={handleDeletePost}>
+                            onClick={()=>togglePopUp(true)}>
                             <FontAwesomeIcon icon={faBan} />
                         </span>
                     </Fragment>
@@ -202,9 +204,9 @@ function Post(props) {
                                 comment_id={el.id}
                                 body={el.body}
                                 post_id={post_id}
-                                user={el.user}
+                                user={el.name}
                                 added_by={el.user_id}
-                                user_pic={el.user_pic}
+                                user_pic={el.profile_pic}
                                 date_added={el.date_added}
                             />
                         )
@@ -230,7 +232,14 @@ function Post(props) {
                 </button>
 
             }
-
+        {popUp ?  <div className="pop-up">
+                <div className="pop-up-text"><p>Are you sure you want to remove delete this post?</p>
+                    <br />
+                    <button onClick={() => handleDeletePost()}>Yes</button><button onClick={() =>  togglePopUp(false)}>No</button>
+                </div>
+            </div>
+            :
+            null}
         </div>
     )
 }

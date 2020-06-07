@@ -8,23 +8,16 @@ import { union } from "lodash";
 const SearchBar = () => {
     const peopleList = useSelector(state=>state.searchPeople.personsList);
     const dispatch = useDispatch();
-    const [inputValue, setInputValue] = useState("");
     const [dropdown, setDropdown] = useState(false);
     const loading = useSelector(state=>state.searchPeople.loading);
-
-    useEffect(()=>{
-        dispatch(searchPeople(inputValue));
-    },[inputValue,dispatch])
-
 
     return (
         <div className="search-bar">
         <input type="text" 
         placeholder="&#x1F50D; Search People" 
-        value={inputValue} 
         onChange={e => { 
-            setInputValue(e.target.value); 
-            setDropdown(true)}} >
+            setDropdown(true)
+            dispatch(searchPeople(e.target.value))}} >
         </input>
         {dropdown?     
         <div className="people-dropdown" onMouseLeave={()=>setDropdown(false)}>
