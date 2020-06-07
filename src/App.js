@@ -50,7 +50,7 @@ function App(){
 else{
   changeTheme("#643434", "#745252", "#e5e5e5", "#291818", "white", "white")
 }
-  }, [theme]);
+  }, [theme,customThemes,isLogged]);
 
     if(isLogged){
       return(

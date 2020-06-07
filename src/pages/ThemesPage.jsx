@@ -54,7 +54,7 @@ const ThemesPage = () => {
         }]
     const handleApplyTheme = (e) => {
         e.preventDefault();
-        {
+        
             dispatch(post("http://localhost:3001/user/updateCustomTheme", { newTheme, themeName, user_id }))
                 .then(() => dispatch(post("http://localhost:3001/user/updateTheme", { theme: themeName, user_id })))
                 .then((res) => {
@@ -64,7 +64,7 @@ const ThemesPage = () => {
                         setTimeout(() => history.push("/"), 2000)
                     }
                 })
-        }
+        
 
     }
 
@@ -200,7 +200,7 @@ const ThemesPage = () => {
                                         <Fragment>
                                             <p className="preview_theme">Preview Theme</p>
                                             <p className="preview_tips">Click on Apply to start using the theme below</p>
-                                            <img src={preview} />
+                                            <img src={preview} alt="preview"/>
                                             <br />
                                             <button
                                                 className="apply_theme_btn"

@@ -62,6 +62,7 @@ function ProfileBar(props) {
         dispatch(post("http://localhost:3001/friend/addFriend", { User, friend_id }))
             .then((res) => {
                 if (res.data === "Success!") {
+                    setSentFriendRequest(true);
                     dispatch(getFriendDetails(friend_id))
                 }
             });

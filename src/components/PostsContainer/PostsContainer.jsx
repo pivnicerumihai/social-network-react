@@ -7,12 +7,12 @@ import Post from "./Post/Post";
 function PostsContainer(props) {
 
   const { user_to, friend_id } = props;
-  
-  const { userFriends,loading, posts } = useSelector(state => ({
+
+  const { userFriends, loading, posts } = useSelector(state => ({
 
     loading: state.getPosts.loading,
     posts: state.getPosts.posts,
-    userFriends: state.login.userDetails.friend_array 
+    userFriends: state.login.userDetails.friend_array
   }))
 
   const [postsToLoad, setPostsToLoad] = useState(5);
@@ -35,15 +35,15 @@ function PostsContainer(props) {
       </div>
     )
   }
-  else if(friend_id && !userFriends.includes(friend_id)){
-    return(
-    
+  else if (friend_id && !userFriends.includes(friend_id)) {
+    return (
+
       <div className="not-friends">
         <h3>You can't see {props.user_to} posts yet!
-        <br/>
+        <br />
         You must be friend in order to see {props.user_to}'s posts!
         </h3>
-        </div>
+      </div>
 
     )
   }
@@ -54,9 +54,21 @@ function PostsContainer(props) {
           posts.map((el, i) => {
             if (i <= postsToLoad) {
               return (
-                <Post key={i} post_id={el._id} comments = {el.comments} added_by_id={el.id}  date_added = {el.date_added} posted_by={el.added_by} added_by_pic={el.added_by_pic} user_to_id={el.user_to_id} profile_pic={el.user_to_pic} posted_to={el.user_to} post_body={el.body} />
-
+                <Post key={i}
+                  post_id={el._id}
+                  comments={el.comments}
+                  added_by_id={el.added_by.id}
+                  added_by_pic={el.added_by.profile_pic}
+                  added_by_name = {el.added_by.name}
+                  date_added={el.date_added}
+                  posted_by={el.added_by}
+                  added_to = {el.added_to}
+                  deleted = {el.deleted}
+                  post_body={el.body} />
               )
+            }
+            else {
+              return null;
             }
           })
           :

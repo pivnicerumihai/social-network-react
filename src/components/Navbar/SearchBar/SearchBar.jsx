@@ -1,4 +1,4 @@
-import React, { useState,useEffect, Fragment } from "react";
+import React, { useState,useEffect } from "react";
 import PeopleDropdown from "./PeopleDropdown/PeopleDropdown";
 import LoadingSpinner from "../../LoadingSpinner/LoadingSpinner";
 import {searchPeople} from "../../../redux/actions/searchPeople.action";
@@ -14,7 +14,7 @@ const SearchBar = () => {
 
     useEffect(()=>{
         dispatch(searchPeople(inputValue));
-    },[inputValue])
+    },[inputValue,dispatch])
 
 
     return (

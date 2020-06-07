@@ -100,7 +100,7 @@ const Comments = (props) => {
             {edit ?
                 <Fragment>
                     <div className="comment_details">
-                        <img src={user_pic}></img>
+                        <img src={user_pic} alt="user_pic"></img>
                         <Link style={{ textDecoration: "none", color: "black" }} to={added_by}> <h4>{user}</h4> </Link>
                     </div>
                     <form onSubmit={handleSubmit}>
@@ -115,15 +115,17 @@ const Comments = (props) => {
                         <input type="submit" value="Save"></input>
                         <input onClick={() => toggleEdit(false)} type="button" value="Cancel Edit" />
                     </form>
+                    
                 </Fragment>
                 :
                 <Fragment>
                     <div className="comment_details">
-                        <img src={user_pic}></img>
+                        <img src={user_pic} alt="user_pic"></img>
                         <Link style={{ textDecoration: "none", color: "black" }} to={added_by} > <h5>{user}</h5> </Link>
                     </div>
                     <div className="comment_options">
                         <h5>{body}</h5>
+                        <p className="comments_interval">{time_difference === "Just now" ? time_difference : "Added " + time_difference}</p>
                         {added_by === user_id ?
                             <Fragment>
                                 <button onClick={() => {
@@ -131,7 +133,7 @@ const Comments = (props) => {
                                     setCommentBody(body);
                                 }}>Edit</button>
                                 <button onClick={handleDelete}>Delete</button>
-                                <p className="comments_interval">{time_difference === "Just now" ? time_difference : "Added " + time_difference}</p>
+                              
                             </Fragment>
                             : null}
                     </div>

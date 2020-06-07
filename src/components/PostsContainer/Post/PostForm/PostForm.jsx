@@ -23,9 +23,7 @@ const PostForm = (props) => {
         const newComment = {
             id:Math.random() * 1000000000,
             body:comment,
-            user:firstName + " " + lastName,
             user_id:user_id,
-            user_pic:user_pic,
             deleted:false,
             likes:0,
             date_added:Date.now()

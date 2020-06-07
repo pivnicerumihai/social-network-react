@@ -8,7 +8,7 @@ function FriendDiv(props){
     return(
     
             <Link className="friend-div" to={id}>            
-            <img src={img} alt="profile picture not loaded"/>
+            <img src={img} alt="user_pic"/>
             <p>{name}</p>
             </Link>
 

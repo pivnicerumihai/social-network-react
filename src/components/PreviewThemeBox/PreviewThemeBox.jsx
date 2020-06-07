@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 
 const PreviewThemeBox = (props) => {
-    const { first_name, last_name, num_posts, num_likes, friend_array, profile_pic } = useSelector(state => state.login.userDetails);
-    const { primary_color, hover_color, secondary_color, shadow, third_color } = props.colors;
+    const { first_name, last_name, num_posts, num_likes, profile_pic } = useSelector(state => state.login.userDetails);
+    const { primary_color, secondary_color, shadow } = props.colors;
 
 
     return (
@@ -20,7 +20,7 @@ const PreviewThemeBox = (props) => {
                 </div>
             </div>
             <div className="preview_top_container" style={{ borderColor: `${primary_color}`, backgroundColor: `${secondary_color}` }}>
-                <img src={profile_pic}></img>
+                <img src={profile_pic} alt="user_pic"></img>
                 <p className="preview_upload_pic_btn" style={{ backgroundColor: `${secondary_color}`, borderColor: `${primary_color}` }}>Select Profile Picture</p>
                 <p className="preview_num_posts" style={{ color: `${primary_color}` }}>Number of posts: {num_posts}</p>
                 <p className="preview_num_likes" style={{ color: `${primary_color}` }}>Number of likes: {num_likes}</p>
@@ -55,7 +55,7 @@ const PreviewThemeBox = (props) => {
             <div class="preview_post_container">
                 <div className="preview_post">
                     <div className="preview_posted_by" style={{ backgroundColor: `${primary_color}` }}>
-                        <img src={profile_pic} />
+                        <img src={profile_pic} alt="user_pic" />
                         <p style={{ color: `${secondary_color}` }}>{first_name + " " + last_name}</p>
                     </div>
                     <div className="preview_post_body" style={{ backgroundColor: `${secondary_color}`, color: `${primary_color}` }}>

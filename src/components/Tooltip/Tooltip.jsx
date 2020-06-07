@@ -6,7 +6,10 @@ const Tooltip = (props) => {
         <div className="tooltip">
             {props.posted_to.map((el, i) => {
                 if (i > 2) {
-                    return <p>{el}</p>
+                    return <p>{el.name}</p>
+                }
+                else {
+                    return null;
                 }
             })}
         </div>

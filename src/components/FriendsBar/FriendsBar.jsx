@@ -13,7 +13,7 @@ function FriendsBar(props) {
 
     useEffect(() => {
         dispatch(getAllFriends(id))
-    }, [])
+    }, [id,dispatch])
 
     const { name, user_id, profile_pic } = all_friends;
 

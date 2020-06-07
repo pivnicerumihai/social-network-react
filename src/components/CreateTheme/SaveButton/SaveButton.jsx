@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 
 const SaveButton = (props) => {
     const { click, color, saved, setSaved } = props;

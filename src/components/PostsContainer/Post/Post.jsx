@@ -11,7 +11,7 @@ import { faEdit, faBan } from '@fortawesome/free-solid-svg-icons'
 import Tooltip from "../../Tooltip/Tooltip";
 
 function Post(props) {
-    const { post_id, posted_to, added_by_pic, added_by_id, date_added, posted_by, post_body, profile_pic, user_to_id, comments } = props;
+    const { post_id, comments, added_by_id, added_by_pic, added_by_name, date_added, posted_by, added_to, deleted, post_body } = props;
     const [commentsDropdown, toggleCommentsDropdown] = useState(false);
     const [editing, setEditing] = useState(false);
     const [editedPost, setEditedPost] = useState(null);
@@ -111,7 +111,7 @@ function Post(props) {
             <div className="post-by">
                 <Link className="link" style={{ textDecoration: "none" }} to={added_by_id}>
                     <img src={added_by_pic} alt="Not loaded"></img>
-                    <h4>{posted_by}</h4>
+                    <h4>{added_by_name}</h4>
 
                 </Link>
                 {added_by_id === user_id ?
@@ -129,7 +129,8 @@ function Post(props) {
                     </Fragment>
                     : null}
             </div>
-            <div className="post-body">{editing ?
+            <div className="post-body">
+                {editing ?
                 <form onSubmit={handleEditPost(post_id, editedPost)}>
                     <textarea
                         value={editedPost}
@@ -141,7 +142,7 @@ function Post(props) {
                 :
                 post_body}
             </div>
-            {posted_to.length === 0 ?
+            {added_to.length === 0 ?
                 <div className="posted-to">
                     <p className="time_interval" style={{width:"100%"}}>
                         Posted {time_difference}
@@ -149,36 +150,39 @@ function Post(props) {
                         </div>
                 :
                 <div className="posted-to">
-                    <h5 style={{ color: "white", marginLeft: "5px", alignSelf: "center", marginRight: "0" }}>To:</h5>
-                    {posted_to.map((el, i) => {
+                    <h5 style={{ color: "white", marginLeft: "5px", alignSelf: "center", marginRight: "0" }}>
+                        To:</h5>
+                    {added_to.map((el, i) => {
                         if(i<3){
                         return (
 
-                            <Fragment key={i}><img src={profile_pic[i]} alt="test" />
-                                <Link className="link" style={{ textDecoration: "none" }} to={user_to_id[i]}>
-                                    <h4>{el}</h4>
+                            <Fragment key={i}><img src={el.profile_pic} alt="test" />
+                                <Link className="link" style={{ textDecoration: "none" }} to={el.id}>
+                                    <h4>{el.username}</h4>
                                 </Link >
                                
                             </Fragment>
                         )}
-                 
+                            else{
+                                return null;
+                            }
                     })}
-                    {posted_to.length === 4 ? 
+                    {added_to.length === 4 ? 
                     <Fragment>
                     <div className="posted_to_others"
                      onMouseEnter={()=>setShowMore(true)}
                      onMouseOut={()=>setShowMore(false)}>and 1 other
-                    {showMore ? <Tooltip posted_to={posted_to}/> : null}
+                    {showMore ? <Tooltip posted_to={added_to}/> : null}
                     </div >
                     </Fragment>
                     : 
-                    posted_to.length > 4 ?
+                    added_to.length > 4 ?
                     <Fragment>
                     <div className="posted_to_others"
                      onMouseEnter={()=>setShowMore(true)}
                      onMouseOut={()=>setShowMore(false)}
-                     > and {posted_to.length - 3 } others
-                    {showMore ? <Tooltip posted_to={posted_to}/> : null}
+                     > and {added_to.length - 3 } others
+                    {showMore ? <Tooltip posted_to={added_to}/> : null}
                     </div >
                     </Fragment>
                     :

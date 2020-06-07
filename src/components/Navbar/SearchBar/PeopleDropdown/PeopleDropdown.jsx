@@ -8,7 +8,7 @@ const PeopleDropdown = (props) => {
     return(
         <Link style={{textDecoration:"none"}} to={user_id}>
         <div onClick={props.mouseClick} className="people">
-            <img src={profile_pic}></img>
+            <img src={profile_pic} alt="user_pic"></img>
             <p>{name}</p>
         </div>
         </Link>

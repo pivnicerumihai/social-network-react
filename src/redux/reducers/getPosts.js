@@ -19,8 +19,8 @@ const getPostsReducer = (state = INITIAL_STATE, action) => {
                 }
                 case "GET_POSTS_FAILURE":
                     return {
+                        ...state,
                         loading: false,
-                            posts: action.payload,
                             error: action.payload
                     }
                     default:
