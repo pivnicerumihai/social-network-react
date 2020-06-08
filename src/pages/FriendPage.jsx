@@ -52,11 +52,20 @@ function FriendPage({ match: { params: { friend_id } } }) {
                         likes={num_likes}
                         posts={num_posts}
                         profile_pic={profile_pic} />
-                    <NewPost friend_id={friend_id} profile_pic={profile_pic} posted_to={friend_details.friendDetails.name} added_by={first_name + " " + last_name} />
+                  {userDetails.friend_array.includes(friend_id) ?
+                   <NewPost friend_id={friend_id} profile_pic={profile_pic} posted_to={friend_details.friendDetails.name} added_by={first_name + " " + last_name} />
+                   :
+                   <div className="not-friends">
+                   <h3>You can't see {name}'s posts yet!
+                   <br />
+                   You must be friend in order to see {name}'s posts!
+                   </h3>
+                 </div>
+                  }
                 </div>
                 <br />
                 <div className="bottom-container">
-                    <FriendsBar id={id} />
+                    <FriendsBar friend_array = {userDetails.friend_array} friend_name={name} id={id} friend_id={id} />
                     <PostsContainer friend_id={friend_id} user_to={name}></PostsContainer>
                 </div>
             </div>

@@ -38,12 +38,7 @@ function PostsContainer(props) {
   else if (friend_id && !userFriends.includes(friend_id)) {
     return (
 
-      <div className="not-friends">
-        <h3>You can't see {props.user_to} posts yet!
-        <br />
-        You must be friend in order to see {props.user_to}'s posts!
-        </h3>
-      </div>
+   null
 
     )
   }
