@@ -45,14 +45,19 @@ function FriendPage({ match: { params: { friend_id } } }) {
         const { first_name, last_name } = userDetails;
         return (
             <div className="home">
-                <div className="top-container">
+                <div className="left-container">
                     <ProfileBar
                         friend_id={friend_id}
                         name={name}
                         likes={num_likes}
                         posts={num_posts}
                         profile_pic={profile_pic} />
-                  {userDetails.friend_array.includes(friend_id) ?
+                              <FriendsBar friend_array = {userDetails.friend_array} friend_lename={name} id={id} friend_id={id} />
+                </div>
+                <br />
+                <div className="right-container">
+       
+                    {userDetails.friend_array.includes(friend_id) ?
                    <NewPost friend_id={friend_id} profile_pic={profile_pic} posted_to={friend_details.friendDetails.name} added_by={first_name + " " + last_name} />
                    :
                    <div className="not-friends">
@@ -62,10 +67,6 @@ function FriendPage({ match: { params: { friend_id } } }) {
                    </h3>
                  </div>
                   }
-                </div>
-                <br />
-                <div className="bottom-container">
-                    <FriendsBar friend_array = {userDetails.friend_array} friend_name={name} id={id} friend_id={id} />
                     <PostsContainer friend_id={friend_id} user_to={name}></PostsContainer>
                 </div>
             </div>

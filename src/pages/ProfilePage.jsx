@@ -22,18 +22,19 @@ function ProfilePage(props) {
     return (
      
         <div className="home">
-            <div className="top-container">
+            <div className="left-container">
                 <ProfileBar
                     name={name}
                     likes={num_likes}
                     posts={num_posts}
                     profile_pic={profile_pic} />
-                <NewPost id={_id} added_by={name} friends={friend_array} />
+             <FriendsBar id={_id} />
             </div>
             <br />
-            <div className="bottom-container">
-                <FriendsBar id={_id} />
+            <div className="right-container">
+            <NewPost id={_id} added_by={name} friends={friend_array} />
                 <PostsContainer id={_id} user_to={name} />
+               
             </div>
         </div>
     )

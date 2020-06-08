@@ -27,7 +27,7 @@ function FriendsBar(props) {
             :  
             <p style={{backgroundColor:"var(--secondary-color)",borderRadius:"7px",width:"90%",height:"70%", padding:"15px",textAlign:"center",fontWeight:"600"}}>
                 
-        {friend_id && !friend_array.includes(friend_id)? `You can't see ${friend_name}'s friends yet!`:`You have no friends! \n You can add friends by searching for people in the search bar and then sending them a friend request!`
+        {friend_id && !friend_array.includes(friend_id)? `You can't see ${friend_name}'s friends yet!`:`You have no friends! You can add friends by searching for people in the search bar and then sending them a friend request!`
         }</p> }
 
             
