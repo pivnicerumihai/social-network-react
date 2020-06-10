@@ -12,3 +12,4 @@
 [0530/000931.136:ERROR:exception_snapshot_win.cc(99)] thread ID 6736 not found in process
 [0530/000931.136:ERROR:exception_snapshot_win.cc(99)] thread ID 12508 not found in process
 [0530/000931.136:ERROR:exception_snapshot_win.cc(99)] thread ID 15720 not found in process
+[0609/214448.409:WARNING:minidump_to_upload_parameters.cc(36)] duplicate key guid, discarding value 7a497c65-9d92-4a05-9bf8-49693ef0b561

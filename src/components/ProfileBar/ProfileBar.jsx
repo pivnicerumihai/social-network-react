@@ -135,7 +135,7 @@ function ProfileBar(props) {
 
             </div>
             <div className="user_info">
-                <span>{name}</span>
+                <span><b>{name}</b></span>
                 <br /> <br /><br />
                 <span className="num_posts">Number of posts: {posts} </span>
                 <br />

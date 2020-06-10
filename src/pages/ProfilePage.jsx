@@ -30,7 +30,7 @@ function ProfilePage(props) {
                     profile_pic={profile_pic} />
              <FriendsBar id={_id} />
             </div>
-            <br />
+
             <div className="right-container">
             <NewPost id={_id} added_by={name} friends={friend_array} />
                 <PostsContainer id={_id} user_to={name} />
